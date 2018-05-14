@@ -1,3 +1,11 @@
+---
+layout: post
+title: 理解IP及DNS协议中的TTL
+categories: linux
+description: 理解IP及DNS协议中的TTL
+keywords: IP, DNS, TTL
+---
+
 # 1. TTL
 ---
 ## 1.1 IP协议中的TTL
