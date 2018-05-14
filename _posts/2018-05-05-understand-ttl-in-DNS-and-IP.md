@@ -6,6 +6,8 @@ description: 理解IP及DNS协议中的TTL
 keywords: IP, DNS, TTL
 ---
 
+本文主要介绍了IP及DNS协议中的TTL含义
+
 # 1. TTL
 
 ## 1.1 IP协议中的TTL
