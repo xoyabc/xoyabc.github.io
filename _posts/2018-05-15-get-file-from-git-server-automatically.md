@@ -33,7 +33,7 @@ keywords: python, pexpect
 
 可使用pexpect模块，免交互执行拉取动作。
 
-```
+```python
 #/usr/bin/python
 # -*- coding: utf-8 -*-
 from pexpect import *
