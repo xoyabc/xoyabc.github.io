@@ -8,6 +8,13 @@ keywords: python, pexpect
 
 从github拉取代码时，经常需要输入密码，可使用pexpect模块设置密码后免交互拉取。
 
+<!-- vim-markdown-toc GFM -->
+
+* [Pexpect的用途](#pexpect的用途)
+* [使用pexpect模块自动拉取git仓库代码](#使用pexpect模块自动拉取git仓库代码)
+
+<!-- vim-markdown-toc -->
+
 ## Pexpect的用途
 
 主要用于：
