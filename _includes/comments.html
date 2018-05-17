@@ -92,7 +92,7 @@
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '{{ page.url }}',
+            id: '{{ page.url | truncate: 50, '' }}',
             clientID: '{{ site.gitalk.clientID }}',
             clientSecret: '{{ site.gitalk.clientSecret }}',
             repo: '{{ site.gitalk.repo }}',
@@ -100,11 +100,6 @@
             admin: ['{{ site.gitalk.owner }}'],
             labels: ['gitment'],
             perPage: 50,
-            // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
-            // 50个字符串则会报错.
-            // id: (location.pathname).split("/").pop().substring(0, 49),
-            distractionFreeMode: true,
-            language: language
         })
         gitalk.render('gitalk-container')
         </script>
