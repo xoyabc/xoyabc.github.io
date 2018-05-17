@@ -90,9 +90,10 @@
         <div id="gitalk-container"></div>
         <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script src="https://rawgit.com/qhh0205/78e9e0b1f3114db6737f3ed8cdd51d3a/raw/3894c5be5aa2378336b1f5ee0f296fa0b22d06e9/md5.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '{{ page.url }}',
+            id: '{{ page.url }}.split("/").pop().substring(0, 49)',
             clientID: '{{ site.gitalk.clientID }}',
             clientSecret: '{{ site.gitalk.clientSecret }}',
             repo: '{{ site.gitalk.repo }}',
@@ -100,6 +101,11 @@
             admin: ['{{ site.gitalk.owner }}'],
             labels: ['gitment'],
             perPage: 50,
+            // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+            // 50个字符串则会报错.
+            // id: (location.pathname).split("/").pop().substring(0, 49),
+            distractionFreeMode: true,
+            language: language
         })
         gitalk.render('gitalk-container')
         </script>
