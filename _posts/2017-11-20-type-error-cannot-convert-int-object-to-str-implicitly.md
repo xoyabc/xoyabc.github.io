@@ -1,8 +1,8 @@
 ---
 layout: post
-title: python中TypeError: Can't convert int object to str implicitly报错的解决办法
+title: python中TypeError:Can't convert int object to str implicitly报错的解决办法
 categories: python, translate 
-description: python中TypeError: Can't convert int object to str implicitly报错的解决办法
+description: python中TypeError:Can't convert int object to str implicitly报错的解决办法
 keywords: python
 ---
 
