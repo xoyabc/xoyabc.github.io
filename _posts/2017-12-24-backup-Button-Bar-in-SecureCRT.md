@@ -14,13 +14,13 @@ keywords: SecureCRT
 
 依次打开 Options-->Global Options-->General-->Configuration Paths，找到配置文件所在文件夹，这里为“C:\Users\lxh\AppData\Roaming\VanDyke\Config”
 
-![1.jpg](https://i.loli.net/2018/05/19/5afff1bdb3a2e.jpg)
+![2QZQ30.jpg](https://t1.picb.cc/uploads/2018/05/19/2QZQ30.jpg)
 
 ## 2.备份ButtonBar.ini文件
 
 打开上一步找到的配置文件夹"C:\Users\lxh\AppData\Roaming\VanDyke\Config"，拷贝其下的ButtonBarV3.ini即可。
 
-![2.jpg](https://i.loli.net/2018/05/19/5afff1bdb5da7.jpg)
+![2QZas1.jpg](https://t1.picb.cc/uploads/2018/05/19/2QZas1.jpg)
 
 ## 参考：
 
