@@ -12,7 +12,29 @@ keywords: linux
 
 1.在A机器执行ssh-keygen -t rsa生成一对rsa公私钥，生成的密钥对会存放在~/.ssh目录下。
 ```shell
+# 执行命令时如有提示一路回车即可。
 root@test .ssh$ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+bf:fa:14:0f:48:a7:65:70:18:ed:60:bf:00:2f:b5:7e root@10.130
+The key's randomart image is:
++--[ RSA 2048]----+
+|        o+.      |
+|      . =o.      |
+|       =.=+      |
+|      ..+*o      |
+|       oS.o.     |
+|        ..E+     |
+|         .o .    |
+|         . .     |
+|        .oo      |
++-----------------+
 ```
 2.在B机器上root的用户目录下创建~/.ssh目录。
 ```shell
