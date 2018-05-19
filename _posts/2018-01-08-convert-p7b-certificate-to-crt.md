@@ -13,11 +13,11 @@ keywords: crt, certificate
 以1.a.com.p7b证书为例，转换为1.a.com.crt
  
 1. 运行fold命令转换格式
-```
+```bash
 fold -w 64 1.a.com.p7b > temp.p7b
 ```
 2. 使用OPENSSL将p7b转换为crt
-```
+```bash
 openssl pkcs7 -print_certs -in temp.p7b |grep -Ev '^\s*$|subject|issuer' > 1.a.com.crt
 ```
 对应脚本
