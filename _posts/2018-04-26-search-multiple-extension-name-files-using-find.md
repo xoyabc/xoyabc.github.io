@@ -11,7 +11,7 @@ keywords: shell, 常用命令
 ## 查找前目录下的所有.gz和.log结尾的文件
 
 ### 当前目录文件列表
-```
+```bash
 [root@test test1]# ll
 总用量 0
 -rw-r--r-- 1 root root 0 4月  24 10:58 1
@@ -22,7 +22,7 @@ keywords: shell, 常用命令
 ```
 
 ### 命令如下：
-```
+```bash
 # 使用-o
 [root@test test1]# find . -type f \( -name "*.gz" -o -name "*.log" \)
 ./1.gz.log
