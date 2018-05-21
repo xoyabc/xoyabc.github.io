@@ -34,7 +34,29 @@
     <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
     <script src="{{ site.url }}/assets/js/geopattern.js"></script>
     <script src="{{ site.url }}/assets/js/prism.js"></script>
+    <!-- add third js scripts start-->
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <!-- jquery -->
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <!-- easing plugin ( optional ) -->
+    <script src="js/easing.js" type="text/javascript"></script>
+    <!-- UItoTop plugin -->
+    <script src="js/jquery.ui.totop.js" type="text/javascript"></script>
+    <!-- Starting the plugin -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <!-- add third js scripts end-->
     <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
     <script>
       jQuery(document).ready(function($) {
