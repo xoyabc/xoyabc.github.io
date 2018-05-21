@@ -34,6 +34,17 @@
     <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
     <script src="{{ site.url }}/assets/js/geopattern.js"></script>
     <script src="{{ site.url }}/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
     <!-- add third js scripts start-->
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <!-- jquery -->
@@ -43,8 +54,8 @@
     <!-- UItoTop plugin -->
     <script src="{{ site.url }}/assets/js/jquery.ui.totop.js"></script>
     <!-- Starting the plugin -->
-    <script type="text/javascript">
-        $(document).ready(function() {
+    <script>
+        jQuery$(document).ready(function() {
             /*
             var defaults = {
                 containerID: 'toTop', // fading element id
@@ -57,16 +68,6 @@
         });
     </script>
     <!-- add third js scripts end-->
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
 
     {% if page.mermaid %}
     <script src="{{ site.url }}/assets/js/mermaid.min.js"></script>
