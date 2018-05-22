@@ -708,6 +708,20 @@ pre {
 }
 
 .tools-wrapper a {
+  display:none;
+  text-decoration:none;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  overflow:hidden;
+  width:51px;
+  height:51px;
+  border:none;
+  text-indent:100%;
+  background:url(/assets/images/ui.totop.png) no-repeat left top;
+}
+
+.tools-wrapper span.octicon {
   background:url(/assets/images/ui.totop.png) no-repeat left -51px;
   width:51px;
   height:51px;
@@ -717,10 +731,6 @@ pre {
   opacity: 0;
   -moz-opacity: 0;
   filter:alpha(opacity=0);
-}
-
-.tools-wrapper span.octicon {
-  font-size: 1.5em;
 }
 
 .tools-wrapper .gotop {
