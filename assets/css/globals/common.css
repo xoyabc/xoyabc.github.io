@@ -708,16 +708,15 @@ pre {
 }
 
 .tools-wrapper a {
-    color: #999;
-    width: 2.5em;	
-    height: 2.5em;	
-    border: 1px solid #ccc;	
-    line-height: 2.5em;
-    text-align: center;
-    font-size: 1.375em;
-    margin-bottom: -1px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 32);
+  background:url(/assets/images/ui.totop.png) no-repeat left -51px;
+  width:51px;
+  height:51px;
+  display:block;
+  overflow:hidden;
+  float:left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:alpha(opacity=0);
 }
 
 .tools-wrapper span.octicon {
