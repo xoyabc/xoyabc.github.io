@@ -711,11 +711,11 @@ pre {
   color: #999;
   text-align: center;
   margin-bottom: -1px;
-  background: rgba(255, 255, 255, 32);
+  background: rgba(255, 0, 255, 32);
 }
 
 .tools-wrapper span.octicon {
-  font-size: 6.5em;
+  font-size: 1.5em;
 }
 
 .tools-wrapper .gotop {
