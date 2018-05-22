@@ -88,12 +88,12 @@
       level = this_level; // update for the next one
     });
     html += "</"+settings.listType+">";
-    if (!settings.noBackToTopLinks) {
+   /* if (!settings.noBackToTopLinks) {
       $(document).on('click', '.back-to-top', function() {
         $(window).scrollTop(0);
         window.location.hash = '';
       });
-    }
+    } */
 
     render[settings.showEffect]();
   };
