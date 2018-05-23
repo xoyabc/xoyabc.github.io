@@ -2,7 +2,8 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://xoyabc.github.io
+#url: https://xoyabc.github.io
+url: https://www.louxiaohui.com
 date_format: "ordinal"
 title: 也曾鲜衣怒马年少时
 subtitle: "vow的个人博客"
