@@ -98,8 +98,14 @@ gitment:
     owner: xoyabc
     repo: blog-comments
     oauth:
-        client_id: 3347609cf727c52373ad
-        client_secret: 76b381faaa03710348db3abb48616f6a9896d91b
+        client_id: 43680b2c85b14b6a5ea0
+        client_secret: 952843ac1036b9901f8b553c4e785f10a02dff74
+# xoyabc_gitalk_custom_domain_token https://www.louxiaohui.com/
+# client_id: 43680b2c85b14b6a5ea0
+# client_secret: 952843ac1036b9901f8b553c4e785f10a02dff74
+# xoyabc_gitalk_token https://xoyabc.githun.io
+# client_id: 3347609cf727c52373ad
+# client_secret: 76b381faaa03710348db3abb48616f6a9896d91b
 # https://github.com/gitalk/gitalk#install
 gitalk:
     owner: xoyabc
