@@ -111,8 +111,8 @@ gitment:
 gitalk:
     owner: xoyabc
     repo: blog-comments
-    clientID: 3347609cf727c52373ad
-    clientSecret: 76b381faaa03710348db3abb48616f6a9896d91b
+    clientID: 43680b2c85b14b6a5ea0
+    clientSecret: 952843ac1036b9901f8b553c4e785f10a02dff74
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
