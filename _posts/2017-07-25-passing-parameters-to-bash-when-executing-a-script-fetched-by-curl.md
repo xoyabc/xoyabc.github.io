@@ -10,24 +10,26 @@ keywords: python,
 
 通常执行发布机上的脚本时习惯使用以下方式：
 
-> curl http://example.com/script.sh | bash
+```shell
+curl http://example.com/script.sh | bash
+```
 
 ### 若脚本涉及到传参时，则可使用以下任一方式:
 
-```Bash
+```shell
 1. curl http://example.com/script.sh | bash -s arg1 arg2
 2. curl http://example.com/script.sh | bash /dev/stdin arg1 arg2
 3. bash <( curl http://example.com/script.sh ) arg1 arg2
 ```
 
 ### 若参数中带有"-"，则可使用长选项"--"解决
-
-> curl http://example.com/script.sh | bash -s -- arg1 arg2
-
+```shell
+curl http://example.com/script.sh | bash -s -- arg1 arg2
+```
 如参数为`-p blah -d blah`,则可使用以下命令执行
-
-> curl http://example.com/script.sh | bash -s -- -p blah -d blah
-
+```shell
+curl http://example.com/script.sh | bash -s -- -p blah -d blah
+```
 该方法不止适用于curl的输入，其他方式的输入也满足。例如下面这个是用`echo`输入的BASH脚本。
 
 ```Bash
