@@ -6,6 +6,10 @@ description: curl方式执行脚本时传参问题
 keywords: python, 
 ---
 
+翻译+润色
+> [passing-parameters-to-bash-when-executing-a-script-fetched-by-curl](https://stackoverflow.com/questions/4642915/passing-parameters-to-bash-when-executing-a-script-fetched-by-curl/4642975)
+
+
 应用场景：使用curl执行远程Web设备上的脚本且需要携带参数时。
 
 通常执行发布机上的脚本时习惯使用以下方式：
