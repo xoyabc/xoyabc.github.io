@@ -16,9 +16,10 @@ awk中若使用间隔表达式`{m,n}`，需要配合--posix 或--re-interval参�
        r{n}
        r{n,}
        r{n,m}    
-One or two numbers inside braces denote an interval expression.If there is one number in thebraces, the preceding regular 
-expression r is repeated n times. If there are two numbers separated by a comma, r is repeated n to m times. If there is 
-one number followed by a comma, then r is repeated at least n times.Interval expressions are only available if either 
+One or two numbers inside braces denote an interval expression.If there is one number in 
+thebraces, the preceding regular expression r is repeated n times. If there are two numbers
+separated by a comma, r is repeated n to m times. If there is one number followed by a 
+comma, then r is repeated at least n times.Interval expressions are only available if either 
 --posix or --re-interval is specified on the com-mand line.
 ```
 
