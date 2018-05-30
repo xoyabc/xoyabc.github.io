@@ -26,8 +26,9 @@ comma, then r is repeated at least n times.Interval expressions are only availab
 ## 翻译
 
 ```
-大括号与在其中的一个或两个数字组合表示一个间隔表达式。若大括号中只含有一个数字，则重复执行前面的正则表达"r"n次。若其中含有以逗号分开的两个
-数字n与m，则重复执行表达式"r"n到m次(n<m)。若数字n后跟一个逗号，则至少重复执行表达式"r"n次。
+大括号与在其中的一个或两个数字组合表示一个间隔表达式。若大括号中只含有一个数字，则重复执行前面的正则表达
+"r"n次。若其中含有以逗号分开的两个数字n与m，则重复执行表达式"r"n到m次(n<m)。若数字n后跟一个逗号，则至少
+^重复执行表达式"r"n次。
 
 只有在命令行中指定了--posix 或--re-interval参数后，间隔表达式才会生效。
 ```
@@ -52,9 +53,11 @@ test.txt文本内容为：
 15575089368
 ```
 - 不加上述两个参数前
-```
+```shell
 root@network test$awk '/1[3578]{1}[0-9]{7}8{2}/' test.txt
-root@network test$
+root@network test$awk '/1[3578][0-9][0-9][0-9][0-9][0-9][0-9][0-9]88/' test.txt          
+17888888888
+17812266688
 ```
 - 加上二者任意一个参数
 ```
@@ -69,4 +72,4 @@ root@network test$awk --posix '/1[3578]{1}[0-9]{7}8{2}/' test.txt
 可以看到,若不加--re-interval或--posix参数时，匹配后无结果输出，加上之后即正常输出。
 
 ## Ref
-[http://blog.chinaunix.net/uid-21505614-id-289437.html](http://blog.chinaunix.net/uid-21505614-id-289437.html)
+[awk --posix](http://blog.chinaunix.net/uid-21505614-id-289437.html)
