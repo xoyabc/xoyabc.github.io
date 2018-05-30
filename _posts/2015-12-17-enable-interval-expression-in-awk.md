@@ -16,7 +16,7 @@ awk中若使用间隔表达式`{m,n}`，需要配合--posix 或--re-interval参�
        r{n}
        r{n,}
        r{n,m}    
-One or two numbers inside braces denote an interval expression.If there is one number in 
+One or two numbers inside braces denote an interval expression.If there is one number in
 thebraces, the preceding regular expression r is repeated n times. If there are two numbers
 separated by a comma, r is repeated n to m times. If there is one number followed by a 
 comma, then r is repeated at least n times.Interval expressions are only available if either 
@@ -25,13 +25,11 @@ comma, then r is repeated at least n times.Interval expressions are only availab
 
 ## 翻译
 
-```
 大括号与在其中的一个或两个数字组合表示一个间隔表达式。若大括号中只含有一个数字，则重复执行前面的正则表达"r"n次。若其中含有以逗号分开的两个数字n与m，
 
 则重复执行表达式"r"n到m次(n<m)。若数字n后跟一个逗号，则至少^重复执行表达式"r"n次。只有在命令行中指定了--posix 或--re-interval参数后，间隔表达式才
 
 会生效。
-```
 
 ## 实例
 
