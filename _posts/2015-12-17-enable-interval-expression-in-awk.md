@@ -9,7 +9,7 @@ keywords: linux, awk
 本文为`翻译+实例`结合。
 awk中若使用间隔表达式`{m,n}`，需要配合--posix 或--re-interval参数才会生效。
 
-## 原文：
+## 原文
 
 ```shell
        r{n}
@@ -21,7 +21,7 @@ one number followed by a comma, then r is repeated at least n times.Interval exp
 --re-interval is specified on the  com-mand line.
 ```
 
-## 翻译：
+## 翻译
 
 ```
 大括号与在其中的一个或两个数字组合表示一个间隔表达式。若大括号中只含有一个数字，则重复执行前面的正则表达"r"n次。若其中含有以逗号分开的两个
