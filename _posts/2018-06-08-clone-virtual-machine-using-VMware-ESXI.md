@@ -66,7 +66,7 @@ start: Job is already running: networking
  1)停掉并启用网卡
  使用`ifdown eth0 && ifup eth0`关闭并启动eth0网卡即可生效。
  
- 2)14.04移除了·networking·的重启功能，可使用13.10中的`/etc/init/networking.conf`及`/etc/init.d/networking`文件覆盖即可。
+ 2)14.04移除了`networking服务`的重启功能，可使用13.10中的`/etc/init/networking.conf`及`/etc/init.d/networking`文件覆盖即可。
 
 具体步骤可参考：https://github.com/metral/restore_networking
 
