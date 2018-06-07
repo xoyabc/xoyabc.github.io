@@ -68,12 +68,14 @@ start: Job is already running: networking
  
  2)14.04移除了`networking服务`的重启功能，可使用13.10中的`/etc/init/networking.conf`及`/etc/init.d/networking`文件覆盖即可。
 
-具体步骤可参考：https://github.com/metral/restore_networking
+具体步骤可参考：[restore_networking](https://github.com/metral/restore_networking)
 
  ```
-There is a bug (feature?) in 14.04 where “service networking start|stop|restart” does nothing. This command/script worked in
+There is a bug (feature?) in 14.04 where “service networking start|stop|restart” does nothing. 
 
-13.10/13.04/12.04, however it doesn’t work in 14.04. To revert back to the 13.10 networking scripts go to:
+This command/script worked in 13.10/13.04/12.04, however it doesn’t work in 14.04. To revert 
+
+back to the 13.10 networking scripts go to:
 
 https://github.com/metral/restore_networking
 
@@ -81,7 +83,7 @@ This will replace the 14.04 scripts with the one used in 13.10.
  ```
  
  
-## 参考：
+## 参考
 
 - [assigning-a-static-ip-to-ubuntu-server-14-04-lts](https://askubuntu.com/questions/470237/assigning-a-static-ip-to-ubuntu-server-14-04-lts)
 - [how-to-set-a-static-ip-to-ubuntu-14-04-server](https://www.simpleprecision.com/how-to-set-a-static-ip-to-ubuntu-14-04-server/)
