@@ -26,7 +26,7 @@ keywords: ESXI, linux
 
 ## 2. 复制vmdk文件到新建虚机的数据目录
 
-依次点击**摘要**-->**datastore**，进入数据存储浏览器。
+依次点击`摘要`-->`datastore`，进入数据存储浏览器。
 
 ![ESXI虚拟机克隆-10.jpg](https://i.loli.net/2018/06/08/5b195c9add3b0.jpg)
 
@@ -37,7 +37,7 @@ keywords: ESXI, linux
 
 ## 3. 给新建虚机28.213添加磁盘
 
-在28.213处，右键选择“编辑设置”，依次点击**添加**-->**磁盘**，给虚拟机添加磁盘。注意要选择**使用现有虚拟磁盘**
+在28.213处，右键选择“编辑设置”，依次点击`添加`-->`磁盘`，给虚拟机添加磁盘。注意要选择**使用现有虚拟磁盘**
 
 ![ESXI虚拟机克隆-19.jpg](https://raw.githubusercontent.com/xoyabc/xoyabc.github.io/master/images/blog/ESXI-clone-19.jpg)
 ![ESXI虚拟机克隆-13.jpg](https://i.loli.net/2018/06/08/5b195c9ae479c.jpg)
