@@ -11,7 +11,7 @@ keywords: ESXI, linux
 
 > (注：28.210虚拟机对应的数据存储为28.200目录，是由于第一次给虚拟机起名是28.200，后来重命名了。)
 
-## 1. 创建一个未加磁盘的虚拟机
+## 1. 新建一个未加磁盘的虚拟机
 
 创建虚拟机28.213，注意要选择“不创建磁盘”。
 
@@ -24,9 +24,9 @@ keywords: ESXI, linux
 ![ESXI虚拟机克隆-8.jpg](https://i.loli.net/2018/06/08/5b195b2ecb6c3.jpg)
 ![ESXI虚拟机克隆-9.jpg](https://i.loli.net/2018/06/08/5b195b2ece5e0.jpg)
 
-## 2. 复制vmdk数据文件到目标主机的数据目录
+## 2. 复制vmdk文件到新建虚机的数据目录
 
-依次点击**摘要**-->**datastore**，进入数据存储浏览器，
+依次点击**摘要**-->**datastore**，进入数据存储浏览器。
 
 ![ESXI虚拟机克隆-10.jpg](https://i.loli.net/2018/06/08/5b195c9add3b0.jpg)
 
@@ -35,11 +35,11 @@ keywords: ESXI, linux
 ![ESXI虚拟机克隆-11.jpg](https://i.loli.net/2018/06/08/5b195c9ae6236.jpg)
 ![ESXI虚拟机克隆-12.jpg](https://i.loli.net/2018/06/08/5b195c9ae30ee.jpg)
 
-## 3. 给28.213添加磁盘
+## 3. 给新建虚机28.213添加磁盘
 
 在28.213处，右键选择“编辑设置”，依次点击**添加**-->**磁盘**，给虚拟机添加磁盘。注意要选择**使用现有虚拟磁盘**
 
-![ESXI虚拟机克隆-19.jpg](https://github.com/xoyabc/xoyabc.github.io/blob/master/images/blog/ESXI-clone-19.jpg)
+![ESXI虚拟机克隆-19.jpg](https://raw.githubusercontent.com/xoyabc/xoyabc.github.io/master/images/blog/ESXI-clone-19.jpg)
 ![ESXI虚拟机克隆-13.jpg](https://i.loli.net/2018/06/08/5b195c9ae479c.jpg)
 ![ESXI虚拟机克隆-14.jpg](https://i.loli.net/2018/06/08/5b195c9ae035e.jpg)
 ![ESXI虚拟机克隆-15.jpg](https://i.loli.net/2018/06/08/5b195c9ae79bc.jpg)
@@ -47,7 +47,7 @@ keywords: ESXI, linux
 ![ESXI虚拟机克隆-17.jpg](https://i.loli.net/2018/06/08/5b195c9ae1bfa.jpg)
 ![ESXI虚拟机克隆-18.jpg](https://i.loli.net/2018/06/08/5b195c9adba0a.jpg)
 
-## 4. 开机并更改IP
+## 4. 开机并更改IP主机名
 
 打开虚拟机电源，进入系统后更改IP、主机名信息。
 
