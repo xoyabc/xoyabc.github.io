@@ -63,9 +63,8 @@ start: Job is already running: networking
 ```
  - A
  
- 使用`ifdown eth0 && ifup eth0`关闭并启动eth0网卡，更改成功。
+ 使用`ifdown eth0 && ifup eth0`关闭并启动eth0网卡即可生效。
  
 参考：[assigning-a-static-ip-to-ubuntu-server-14-04-lts](https://askubuntu.com/questions/470237/assigning-a-static-ip-to-ubuntu-server-14-04-lts)
-
 
 全文完~~
