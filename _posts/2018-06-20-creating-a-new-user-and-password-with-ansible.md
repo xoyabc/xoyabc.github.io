@@ -62,7 +62,7 @@ main.yml内容如下：
 
 - name: Create user account
   user: 
-      name: "{{ new_user_name }}"
+      name: "\{\{ new_user_name \}\}"
       password: "{{ encrypted_user_password.stdout }}"
       shell: /bin/bash
       update_password: on_create
