@@ -54,7 +54,7 @@ main.yml内容如下：
 
 - name: Generate password for new user
   #shell: echo -n "1qaz2wsx" # 如需设置每台机器的账号密码一样，可启用此行
-                             #注释下一行"shell: command openssl rand -base64 6"
+                             # 注释下一行"shell: command openssl rand -base64 6"
   shell: command openssl rand -base64 6
   register: user_password
 
@@ -144,6 +144,36 @@ PLAY RECAP *********************************************************************
 | :-----------: | :-----------: | :------------: |
 | 192.168.10.101 | test2018 | zkmuXatj |
 | 192.168.10.102 | test2018 | qTUPuvoi |
+
+## 5. 登陆验证
+
+通过ssh连接192.168.10.101，会看到密码过期的提示(`Your password has expired`)，输入当前密码`zkmuXatj`-->输入
+
+两遍新密码重置，之后重新使用新密码重新连接即可。
+
+```bash
+$ssh test2018@192.168.10.101
+test2018@192.168.10.101's password: 
+You are required to change your password immediately (root enforced)
+Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+WARNING: Your password has expired.
+You must change your password now and login again!
+Changing password for test2018.
+(current) UNIX password: 
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Connection to 192.168.10.101 closed.
+```
+
 
 
 ## 参考
