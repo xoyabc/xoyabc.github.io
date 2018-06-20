@@ -21,7 +21,7 @@ hosts内容如下：
 
 ```
 name: "'{''{' new_user_name '}''}'"
-name: "{{ new_user_name }}"
+name: "'{{' new_user_name '}}'"
 ```
 
 ```bash
