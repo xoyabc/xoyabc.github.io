@@ -15,6 +15,15 @@ keywords: ansible, linux
 hosts内容如下：
 >$ cat hosts
 
+>$ cat hosts
+
+> name: "{{ new_user_name }}"
+
+```
+name: "{{ new_user_name }}"
+name: "{{ new_user_name }}"
+```
+
 ```bash
 [test]
 192.168.10.101
@@ -47,12 +56,13 @@ main.yml内容如下：
 
 >$  cat roles/create_user/tasks/main.yml
 
-```js
+```bash
 # Generate random password for new_user_name and the new_user_name
 # is required to change his/her password on first logon. 
 
 - name: Generate password for new user
-  #shell: echo -n "1qaz2wsx" # 如需设置每台机器的账号密码一样，可启用此行，注释"shell: command openssl rand -base64 6"
+  #shell: echo -n "1qaz2wsx" # 如需设置每台机器的账号密码一样，可启用此行
+                             #注释下一行"shell: command openssl rand -base64 6"
   shell: command openssl rand -base64 6
   register: user_password
 
@@ -64,6 +74,7 @@ main.yml内容如下：
   user: 
       name: "{{ new_user_name }}"
       password: "{{ encrypted_user_password.stdout }}"
+#password: "{{ 'password' | password_hash('sha512') }}"
       shell: /bin/bash
       update_password: on_create
       state: present
