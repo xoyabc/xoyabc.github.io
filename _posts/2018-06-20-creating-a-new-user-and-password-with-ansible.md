@@ -89,7 +89,7 @@ main.yml内容如下：
 
 ## 4. 运行playbook添加账号
 
-添加账号并对每个账号创建随机密码，强制密码过期，首次登录需修改密码。
+添加账号并对每个账号创建随机密码，设置密码过期，首次登录需修改密码。
 > $ ansible-playbook -i hosts create_user.yml --extra-vars "new_user_name=test2018" -f 10 --sudo 
 
 ```
