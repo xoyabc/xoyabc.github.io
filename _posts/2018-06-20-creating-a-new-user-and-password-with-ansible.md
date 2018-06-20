@@ -17,10 +17,10 @@ hosts内容如下：
 
 >$ cat hosts
 
-> name: "{{ new_user_name }}"
+> name: "'{''{' new_user_name '}''}'"
 
 ```
-name: "{{ new_user_name }}"
+name: "'{''{' new_user_name '}''}'"
 name: "{{ new_user_name }}"
 ```
 
