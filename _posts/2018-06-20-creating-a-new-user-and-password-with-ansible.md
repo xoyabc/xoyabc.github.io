@@ -15,22 +15,6 @@ keywords: ansible, linux
 hosts内容如下：
 >$ cat hosts
 
-{% raw  %}{{ new_user_name }}{% endraw %}
-
-name: "{% raw  %}{{ new_user_name }}{% endraw %}"
-----------------
-<!-- {% raw %} -->
-```bash
-- name: Create user account
-  user: 
-      name: "{{ new_user_name }}"
-      password: "{{ encrypted_user_password.stdout }}"
-#password: "{{ 'password' | password_hash('sha512') }}"
-```
-<!-- {% endraw %}) -->
-----------------
-
-
 ```bash
 [test]
 192.168.10.101
@@ -63,6 +47,7 @@ main.yml内容如下：
 
 >$  cat roles/create_user/tasks/main.yml
 
+<!-- {% raw %} -->
 ```bash
 # Generate random password for new_user_name and the new_user_name
 # is required to change his/her password on first logon. 
@@ -97,6 +82,7 @@ main.yml内容如下：
   debug: msg="Password for {{ new_user_name }} is {{ user_password.stdout }}"
   when: user_created.changed
 ```
+<!-- {% endraw %} -->
 
 ## 4. 运行playbook添加账号
 
