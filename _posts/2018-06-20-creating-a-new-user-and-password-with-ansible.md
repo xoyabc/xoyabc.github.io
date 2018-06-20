@@ -44,7 +44,9 @@ $ cat create_user.yml
 `mkdir -p roles/create_user/tasks`
 
 main.yml内容如下：
+
 >$  cat roles/create_user/tasks/main.yml
+
 ```bash
 # Generate random password for new_user_name and the new_user_name
 # is required to change his/her password on first logon. 
