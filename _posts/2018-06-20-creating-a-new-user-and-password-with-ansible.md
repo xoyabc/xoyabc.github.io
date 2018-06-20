@@ -140,3 +140,13 @@ PLAY RECAP *********************************************************************
 
 ## 参考
 [creating-a-new-user-and-password-with-ansible](https://stackoverflow.com/questions/19292899/creating-a-new-user-and-password-with-ansible)
+
+## 其他
+
+可将host中的账号密码等信息放到group_vars目录下的一个test.yml，之后使用ansible-vault对test.yml加密，防止账号密码泄露，确保安全。
+详细步骤可参考：
+
+[Ansible vault example](https://gist.github.com/xoyabc/4ab27d181808affa6450ee481e0ff9b2)
+
+
+
