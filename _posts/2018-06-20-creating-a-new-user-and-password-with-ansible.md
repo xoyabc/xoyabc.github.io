@@ -47,7 +47,7 @@ main.yml内容如下：
 
 >$  cat roles/create_user/tasks/main.yml
 
-```
+```js
 # Generate random password for new_user_name and the new_user_name
 # is required to change his/her password on first logon. 
 
@@ -62,7 +62,7 @@ main.yml内容如下：
 
 - name: Create user account
   user: 
-      name: "\{\{ new_user_name \}\}"
+      name: "{{ new_user_name }}"
       password: "{{ encrypted_user_password.stdout }}"
       shell: /bin/bash
       update_password: on_create
