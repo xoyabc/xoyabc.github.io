@@ -19,7 +19,15 @@ hosts内容如下：
 
 name: "{% raw  %}{{ new_user_name }}{% endraw %}"
 ----------------
-name: "&#123&#123 new_user_name &#125&#125"
+<!-- {% raw %} -->
+```bash
+- name: Create user account
+  user: 
+      name: "{{ new_user_name }}"
+      password: "{{ encrypted_user_password.stdout }}"
+#password: "{{ 'password' | password_hash('sha512') }}"
+```
+<!-- {% endraw %}) -->
 ----------------
 
 
