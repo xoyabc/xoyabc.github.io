@@ -18,6 +18,10 @@ hosts内容如下：
 {% raw  %}{{ new_user_name }}{% endraw %}
 
 name: "{% raw  %}{{ new_user_name }}{% endraw %}"
+----------------
+name: "&#123&#123 new_user_name &#125&#125"
+----------------
+
 
 ```bash
 [test]
