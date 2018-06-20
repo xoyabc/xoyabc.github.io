@@ -15,7 +15,7 @@ keywords: ansible, linux
 hosts内容如下：
 >$ cat hosts
 
-{{ new_user_name }}  {{ new_user_name }} {{' new_user_name '}}
+{{ new_user_name }}  {{ new_user_name }} "{{" new_user_name "}}"
 
 >$ cat hosts
 
