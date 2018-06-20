@@ -25,6 +25,7 @@ ansible_ssh_user=ubuntu
 ansible_ssh_pass=ubuntu
 ansible_sudo_pass=ubuntu
 ```
+这里的账号密码sudo密码，在`[test:vars]`下定义并应用到`test`组的所有机器。
 
 ## 2. 创建create_user.yml
 
@@ -39,9 +40,11 @@ $ cat create_user.yml
     - create_user
 ```
 
+这里`hosts: test`中的`test`对应机器为`hosts`文件中的`test`组机器。
+
 ## 3. 创建roles对应的main.yml
 
-`mkdir -p roles/create_user/tasks`
+创建目录，`mkdir -p roles/create_user/tasks`，注意这里的`roles/create_user`与create_user.yml的最后2行配置要一致。
 
 main.yml内容如下：
 
@@ -149,7 +152,7 @@ PLAY RECAP *********************************************************************
 
 通过ssh连接192.168.10.101，会看到密码过期的提示(`Your password has expired`)，输入当前密码`zkmuXatj`-->输入
 
-两遍新密码重置，之后重新使用新密码重新连接即可。
+两遍新密码重置，之后重新使用新密码连接即可。
 
 ```bash
 $ssh test2018@192.168.10.101
