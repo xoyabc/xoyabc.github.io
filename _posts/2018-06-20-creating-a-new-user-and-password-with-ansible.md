@@ -6,7 +6,7 @@ description: 使用ansible创建新用户并设置密码
 keywords: ansible, linux
 ---
 
-使用ansible的role创建用户名及随机密码，并设置密码立即过期，用户首次登录时需要更改为自己的密码，以方便用户使用。
+使用ansible的role创建用户名及随机密码，并设置密码立即过期，这样用户首次登录时需要更改为自己的密码，一是方便用户使用，二是确保安全。
 
 ## 1. 创建hosts文件
 
