@@ -99,13 +99,16 @@ main.yml内容如下：
 ```
 # -i  指定主机文件
 # -f 10 设置并发数为10
-# --sudo 使用sudo，不建议这样做，建议使用-b, --become run operations with become， -b参数为提权
-# -extra-vars -e EXTRA_VARS, --extra-vars=EXTRA_VARS set additional variables as key=value or YAML/JSON
+# --sudo 使用sudo，
+不建议这样做，建议使用-b, --become run operations with become -b参数为提权
+# -extra-vars 
+-e EXTRA_VARS, --extra-vars=EXTRA_VARS set additional variables as key=value or YAML/JSON
 # 额外的变量设置，以"键=值"形式填写，或yaml、json形式。
 ```
 
 ```bash
-$ansible-playbook -i hosts create_user.yml --extra-vars "new_user_name=test2018" -f 10 --sudo 
+$ansible-playbook -i hosts create_user.yml --extra-vars "new_user_name=test2018" -f 10 \
+--sudo 
 
 PLAY ***************************************************************************
 
