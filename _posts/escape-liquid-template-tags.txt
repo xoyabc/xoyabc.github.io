@@ -1,0 +1,22 @@
+escape liquid template tags,without it being processed by the engine
+https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags
+1.You can escape liquid tags in Jekyll posts using {% raw %} {% endraw %} i.e
+{% raw  %}
+{% this %}
+{% endraw %}
+
+2.The <!-- --> is seen by GitHub as a comment and the {% raw %} {% endraw %} prevents Jekyll from parsing the curly braces.
+
+<!-- {% raw %} -->
+```html
+<div no-ui-slider
+     slider-options="{{ optionsWithoutStart }}"
+     ng-model="sliderPositions"></div>
+```
+<!-- {% endraw %}) -->
+
+On both GitHub and Jekyll (GitHub Pages), the output is:
+
+<div no-ui-slider
+     slider-options="{{ optionsWithoutStart }}"
+     ng-model="sliderPositions"></div>
