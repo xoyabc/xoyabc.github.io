@@ -1,3 +1,11 @@
+---
+layout: wiki
+title: 
+categories: apt-get
+description: apt-get 常用命令
+keywords: apt-get
+---
+
 ``` bash
 apt-cache search package    #搜索包（相当于yum list | grep pkg）
 apt-cache show package      #显示包的相关信息，如说明、大小、版本等
