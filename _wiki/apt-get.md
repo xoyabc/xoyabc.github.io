@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: 
+title: apt-get
 categories: apt-get
 description: apt-get 常用命令
 keywords: apt-get
