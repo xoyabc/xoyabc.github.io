@@ -1,3 +1,5 @@
+https://www.nginx.com/blog/optimizing-web-servers-for-high-throughput-and-low-latency/#1445SysctltuningDosandDonts
+
 14:45 Sysctl Tuning Do’s and Don’ts
 
 ![123](https://cdn-1.wp.nginx.com/wp-content/uploads/2017/11/Ivanov-conf2017-slide27_Sysctl-Tuning.png)
@@ -5,13 +7,14 @@
 
 You can’t actually do any network optimization talk without mentioning sysctl. Here are some do’s and don’ts.
 
-
+![jpg](https://cdn-1.wp.nginx.com/wp-content/uploads/2017/11/Ivanov-conf2017-slide28_Sysctl-Tuning-Donts.png)
 
 Let’s start with stuff you shouldn’t do:
 
 Don’t enable TIME‑WAIT recycle. It was already broken for NAT [Network Address Translation] users; it will be even more broken in newer kernels. And it’ll be removed, so don’t use it.
 Don’t disable timestamps unless you know what you’re doing. It has very non‑obvious implications, for example for SYN cookies. And there are many such implications, so unless you know what you’re doing – unless you’ve read the code – don’t disable them.
 
+![jpg](https://cdn-1.wp.nginx.com/wp-content/uploads/2017/11/Ivanov-conf2017-slide29_Sysctl-Tuning-Dos.png)
 
 Stuff you should do, on the other hand:
 
