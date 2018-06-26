@@ -34,9 +34,9 @@ foreach ($files in $allFiles)
 }
 ```
 `-Recurse`表示递归，可以删除子目录
-`-force` 强制删除，可以删除隐藏及只读文件。
 
-delete all file force fully，delete all hidden or read-only files
+`-force` 强制删除，可以删除隐藏及只读文件(delete all file force fully，delete all hidden or read-only files)
+
 
 
 ## 2. 添加计划任务
