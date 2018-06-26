@@ -15,7 +15,7 @@ powershell版本：4.0
 
 ## 1. 删除脚本
 
-这里放到了D盘根目录下面，文件名为`D:\delete_tmp_files.ps1`
+这里放到了D盘根目录下面，文件名为`D:\delete_tmp_files.ps1`，删除15天前的文件和目录。
 
 删除脚本`delete_tmp_files.ps1`内容如下：
 
@@ -33,6 +33,11 @@ foreach ($files in $allFiles)
     }     
 }
 ```
+`-Recurse`表示递归，可以删除子目录
+`-force` 强制删除，可以删除隐藏及只读文件。
+
+delete all file force fully，delete all hidden or read-only files
+
 
 ## 2. 添加计划任务
 
@@ -72,6 +77,6 @@ Register-ScheduledJob -Name Delete-Tmp-Files -FilePath "D:\delete_tmp_files.ps1"
 
 [New-JobTrigger](https://docs.microsoft.com/en-us/powershell/module/psscheduledjob/new-jobtrigger?view=powershell-5.1)
 
-
+[how-to-delete-a-folder-or-file-using-powershell](http://dotnet-helpers.com/powershell-demo/how-to-delete-a-folder-or-file-using-powershell/)
 
 
