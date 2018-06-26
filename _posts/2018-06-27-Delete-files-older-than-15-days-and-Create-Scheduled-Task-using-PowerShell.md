@@ -7,7 +7,6 @@ keywords: windows, powershell
 ---
 
   公司会议视频转换所使用的机器系统为windows，因程序转换失败时会在D盘生成临时文件，日积月累会造成磁盘满，造成新的视频会议录制
-
 内容无法转换，为避免此类情况，临时用powershell编写了对应的删除及添加计划任务脚本。
 
 系统环境：`Microsoft Windows Server 2012 R2 Standard`
@@ -49,7 +48,7 @@ Register-ScheduledJob -Name Delete-Tmp-Files -FilePath "D:\delete_tmp_files.ps1"
 
 `-DaysOfWeek`: 在周计划任务中，指定每周的哪一天运行，一般与`-Weekly`配合使用。
 
-周日-周六可用对应英文表示，也可用数字表示，对应表如下：
+周日-->周一-->...-->周六可用对应英文表示，也可用数字表示，对应表如下：
 
 | 表示方法 | 周日 | 周一 | 周二 | 周三 | 周四 | 周五 | 周六 |
 | :------:| :--: |:--: |:--: |:--: |:--: |:--: |:--: |
