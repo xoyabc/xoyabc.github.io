@@ -62,3 +62,8 @@ child.interact()      # Give control of the child to the user.
 通过以上两图对比可知，`child.before`里面存放的为匹配字符串之前的所有内容，`child.after`里面存放的为匹配到的字符串。
 
 因此，`print child.after`中有**Password: **而`print child.before`没有。
+
+| IP | 账号 | 密码 |
+| :-----------: | :-----------: | :------------: |
+| 192.168.10.101 | test2018 | zkmuXatj |
+| 192.168.10.102 | test2018 | qTUPuvoi |
