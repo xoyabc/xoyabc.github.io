@@ -41,6 +41,29 @@ MTU为Maximum Transmission Unit,即最大传输单元，需要注意MTU如果太
 
 从截图中可以看到MSS为1460，MTU计算后为1500，1460 + 20(IP header) + 20(tcp header) = 1500
 
+## 遇到的问题
+
+- 问题
+
+同一局域网中，同样的操作系统，同样的URL链接，同样的端口，使用ESXI虚拟出来的两台虚机，分别绑定host，使用wget测试下载速度，一个下载200K/s，一个10M/s。
+
+| url |	IP	| 下载速度	| 截图 |
+| :--: | :--: | :--: | :--: |
+| http://192.168.28.210:8989/mac_3.4.196_1530084415522.zip	| 192.168.28.210 | 10M/s | ![1.png](https://i.loli.net/2018/06/29/5b352a1874907.png) |
+| http://192.168.28.41:8989/mac_3.4.196_1530084415522.zip	| 192.168.28.41 |	200K/s |	![2.png](https://i.loli.net/2018/06/29/5b352a188d348.png) |
+
+ - 解决
+ 
+ 抓包后发现：
+ 28.41的Length为1294，MSS为1240,推断其MTU为1280
+ 28.210的Length为1514，MSS为1460，推断其MTU为1500
+ 
+ 猜测其网卡设置不同，进入宿主机看网卡设置，28.41的网卡类型不是E1000，28.210的E1000，将28.41的网卡类型改为E1000后测试，恢复。
+	
+![3.png](https://i.loli.net/2018/06/29/5b352a189d02c.png)
+![4.png](https://i.loli.net/2018/06/29/5b352a18a2889.png)
+![5.png](https://i.loli.net/2018/06/29/5b352a18a4726.png)
+
 ## 参考
 
 [length field](https://osqa-ask.wireshark.org/questions/44865/length-field)
