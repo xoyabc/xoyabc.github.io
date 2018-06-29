@@ -30,7 +30,7 @@ MTU=MSS+IP header(20 bytes)+tcp header(20 bytes)
 length=MTU+Ethernet header(14bytes)
 
 其中MSS为Maximum Segment Size，即最大报文段长度，其受MTU大小影响，这里的MTU指的是三层的，二层的MTU固定为1500，不能修改。
-MTU为Maximum Transmission Unit,即最大传输单元，需要注意MTU如果太小会影收到数据包的速度，表现为下载过慢。
+MTU为Maximum Transmission Unit,即最大传输单元，需要注意MTU如果太小会影响收到数据包的速度，表现为下载过慢。
 
 ```
 三层收到大数据包时，要将数据包分片后再往下层传输，这就是IP分片原理。既然IP分片可以改变一个IP数据包的大小 ，那么IP分片怎么设置呢？
