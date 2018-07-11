@@ -11,9 +11,7 @@ python中删除字符串中的空白字符。
 
 主要参考StackOverflow答案总结。
 
-空白字符一般指以下几种字符：space, tab, linefeed, return, formfeed, and vertical tab。
-
-中英文对照表如下：
+空白字符一般指以下几种字符：space, tab, linefeed, return, formfeed, and vertical tab。中英文对照表如下：
 
 | 英文 | space | tab | linefeed | return | formfeed | vertical tab |
 | :---: |:---: |:---: |:---: |:---: |:---: |:---: |
