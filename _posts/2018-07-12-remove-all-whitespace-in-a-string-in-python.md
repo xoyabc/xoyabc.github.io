@@ -1,5 +1,3 @@
-
-
 ---
 layout: post
 title: python中删除空白字符串
@@ -166,7 +164,6 @@ Out[85]: '1,2,3'
 strip does a rstrip and lstrip (removes leading and trailing spaces, tabs, returns and form 
 feeds, but it does not remove them in the middle of the string).
 ```
-
 
 ## 参考
 
