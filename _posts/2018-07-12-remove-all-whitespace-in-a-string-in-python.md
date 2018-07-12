@@ -24,7 +24,7 @@ python中删除字符串中的空白字符。
 
 ## 去除空格
 
-- 去除左右两边的空格
+### 去除左右两边的空格
 
 使用`str.strip():`
 
@@ -35,7 +35,7 @@ In [2]: sentence.strip()
 Out[2]: 'hello  apple'
 ```
 
-- 去除所有空格
+### 去除所有空格
 
 使用`str.replace()`
 
@@ -48,7 +48,7 @@ Out[4]: 'helloapple'
 
 ## 去除空白字符
 
- - 去除所有的空白字符
+### 去除所有的空白字符
 
 使用`str.split()`及`join`
 
@@ -88,7 +88,7 @@ In [80]: print sentence.translate(None, ' \n\t\r')
 helloapple
  ```
 
- - 只去除左边的空白字符
+### 只去除左边的空白字符
  
  使用`str.lstrip()`
  
@@ -111,7 +111,7 @@ In [39]: sentence
 Out[39]: 'hello  apple  '
  ```
  
- - 只去除右边的空白字符
+### 只去除右边的空白字符
  
  使用`str.rstrip()`
 
@@ -135,7 +135,7 @@ In [46]: sentence
 Out[46]: '  hello  apple'
  ```
  
- - 仅去除重复的空白字符
+### 仅去除重复的空白字符
  
  使用正则
  
@@ -166,5 +166,3 @@ feeds, but it does not remove them in the middle of the string).
 ## 参考
 
 [remove-all-whitespace-in-a-string-in-python](https://stackoverflow.com/questions/8270092/remove-all-whitespace-in-a-string-in-python)
-
-
