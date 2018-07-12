@@ -1,8 +1,8 @@
 ---
 layout: post
-title: python中删除空白字符串
+title: python中删除空白字符
 categories: python
-description: python中删除空白字符串
+description: python中删除空白字符
 keywords: python, pexpect
 ---
 
