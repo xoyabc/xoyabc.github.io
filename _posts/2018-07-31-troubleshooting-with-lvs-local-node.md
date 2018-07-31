@@ -10,11 +10,11 @@ keywords: linux, lvs
 
 telnet LVS VIP未响应会间歇性提示`NO route to host`。
 
-![1.png](https://i.loli.net/2018/07/31/5b607f51526d0.png)
+![lvs_localnode_1.png](https://i.loli.net/2018/07/31/5b6083d295616.png)
 
 ## 背景
 
-localnode指的是 realserver 和 directo在同一台设备上，这样做是为了节省机器资源。 
+localnode指的是 realserver 和 director在同一台设备上，这样做是为了节省机器资源。 
 
 ## 问题原因：
 
@@ -63,17 +63,17 @@ eth1 119.253.82.6
 1. DR1/RS1-172.17.35.54
 
  - Director1 的内网VIP 172.17.35.56配置 iptables ，除了 Director2 以外的包，都设置 mask 为3。
- ``` bash
+ ```bash
  iptables  -t mangle -I PREROUTING -d 172.17.35.56 -p tcp -m tcp --dport 80 -m mac ! --mac-source 00:0C:29:57:88:CE -j MARK --set-mark 0x3
  ```
  
   - Director1 的外网VIP 119.253.82.6配置 iptables ，除了 Director2 以外的包，都设置 mask 为5。
-  ``` bash
+  ```bash
   iptables  -t mangle -I PREROUTING -d 119.253.82.6 -p tcp -m tcp --dport 80 -m mac ! --mac-source 00:0C:29:57:88:D8 -j MARK --set-mark 0x5
   ```
   
   - keepalived.conf
-  ``` bash
+  ```bash
   1)
   virtual_server 172.17.35.56 80 {
   改为
@@ -86,17 +86,17 @@ eth1 119.253.82.6
 2. DR2/RS2-172.17.35.55
 
  - Director2 的内网VIP 172.17.35.56配置 iptables ，除了 Director1 以外的包，都设置 mask 为4。
- ``` bash
+ ```bash
  iptables  -t mangle -I PREROUTING -d 172.17.35.56 -p tcp -m tcp --dport 80 -m mac ! --mac-source 00:0C:29:DC:D2:6B -j MARK --set-mark 0x4
  ```
  
  - Director2 的外网VIP 119.253.82.6配置 iptables ，除了 Director1以外的包，都设置 mask 为6。
- ``` bash
+ ```bash
  iptables  -t mangle -I PREROUTING -d 119.253.82.6 -p tcp -m tcp --dport 80 -m mac ! --mac-source 00:0C:29:DC:D2:75 -j MARK --set-mark 0x6
  ```
  
  - keepalived.conf
- ``` bash
+ ```bash
  1)
  virtual_server 172.17.35.56 80 {
  改为
@@ -112,19 +112,9 @@ eth1 119.253.82.6
  ![lvs_localnode_2.png](https://i.loli.net/2018/07/31/5b60837fe635c.png)
  
   
-  
-  
-  
-  
- 
- 
+## 参考文章
 
+[LVS DR模式的一些问题 ](http://linbo.github.io/2017/08/20/lvs-dr)
 
-
-
-
-
-
-
-
+[两台机器 Centos7 LVS+Keepalived 实现负载/高可用之 DR 集成部署(LocalNode/Two Box)及原理详解](http://jiangyu86.cn/2018/03/04/cluster/lvs_localnode_dr/)
 
