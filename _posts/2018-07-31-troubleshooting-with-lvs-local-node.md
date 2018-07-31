@@ -60,7 +60,7 @@ eth1 119.253.282.6
 
 分别在两台RS上更改配置。
 
-#### 1. DR1/RS1-172.17.85.54
+1. DR1/RS1-172.17.85.54
 
  - Director1 的内网VIP 172.17.85.56配置 iptables ，除了 Director2 以外的包，都设置 mask 为3。
  ```bash
@@ -83,8 +83,8 @@ eth1 119.253.282.6
   改为
   virtual_server fwmark 5 {
   ```
-  
-  #### 2. DR2/RS2-172.17.85.55
+ 
+2. DR2/RS2-172.17.85.55
 
  - Director2 的内网VIP 172.17.85.56配置 iptables ，除了 Director1 以外的包，都设置 mask 为4。
  ```bash
