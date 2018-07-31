@@ -10,8 +10,9 @@ keywords: 工具, 推荐
 
 ## 在线工具列表
 
-| 功能                                 | 地址        |
-|--------------------------------------|----------------|
-| 多地ping测试                          | [Ping simultaneously from 16 locations.](https://tools.keycdn.com/ping) |
-| 多地ping测试                          | [Ping and mtr from multiple locations](https://ping.pe/) |
-| dns查询                              | [https://dnschecker.org/#A/](https://dnschecker.org/#A/)  | 
+| 功能                                 | 地址        |  备注 |
+|--------------------------------------|----------------| ---------------- |
+| 多地ping测试                          | [Ping simultaneously from 16 locations.](https://tools.keycdn.com/ping) |         |
+| 多地ping测试                          | [Ping and mtr from multiple locations](https://ping.pe/) |           |
+| dns查询                              | [https://dnschecker.org/#A/](https://dnschecker.org/#A/)  |           |
+| MobaXterm                              | [http://www.0daydown.com/?s=MobaXterm](http://www.0daydown.com/?s=MobaXterm)  | MobaXterm是一款豪华、全功能的终端软件MobaXterm，支持ssh/rdp/telnet/vncftp/sftp 等多种协议 |
