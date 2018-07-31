@@ -14,4 +14,4 @@ keywords: 工具, 推荐
 |--------------------------------------|----------------|
 | 多地ping测试                          | [Ping simultaneously from 16 locations.](https://tools.keycdn.com/ping) |
 | 多地ping测试                          | [Ping and mtr from multiple locations](https://ping.pe/) |
-| dns查询                              | https://dnschecker.org/#A/          | 
+| dns查询                              | [https://dnschecker.org/#A/](https://dnschecker.org/#A/)  | 
