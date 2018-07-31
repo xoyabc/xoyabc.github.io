@@ -28,6 +28,9 @@ keywords: 软件, 推荐
 | 下载                                 | 迅雷精简版     | 迅雷              |
 | 录制屏幕生成 GIF                     | LICEcap        | LICEcap           |
 | 打开 CHM 文档                        |                | ichm              |
+| 常用软件                             |  [Windows常用软件推荐](https://wsgzao.github.io/post/windows/)  | [Mac新手入门以及常用软件推荐](https://wsgzao.github.io/post/mac/)  |
+
+
 
 ## 亮点
 
