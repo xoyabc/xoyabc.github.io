@@ -24,7 +24,7 @@ keywords: 软件, 推荐
 | 源码阅读                             | Source Insight | IDE/Vim           |
 | 笔记                                 | OneNote        | OneNote           |
 | 终端                                 | Cmder          | zsh               |
-| 视频播放器                           | QQ 影音        | mpv               |
+| 视频播放器                           | [完美解码](http://jm.wmzhe.com/)       | mpv               |
 | 下载                                 | 迅雷精简版     | 迅雷              |
 | 录制屏幕生成 GIF                     | LICEcap        | LICEcap           |
 | 打开 CHM 文档                        |                | ichm              |
