@@ -8,7 +8,7 @@ keywords: linux, lvs
 
 ## 问题现象
 
-telnet LVS VIP未响应会间歇性提示`NO route to host`。
+telnet LVS VIP会间歇性未响应,提示`NO route to host`。
 
 ![lvs_localnode_1.png](https://i.loli.net/2018/07/31/5b6083d295616.png)
 
