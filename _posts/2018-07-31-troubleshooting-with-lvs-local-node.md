@@ -16,7 +16,7 @@ telnet LVS VIP会间歇性未响应,提示`NO route to host`。
 
 localnode指的是 realserver 和 director在同一台设备上，这样做是为了节省机器资源。 
 
-## 问题原因：
+## 问题原因
 
 LVS主备都是RS和Director部署在同一台设备上，而且主备都启用了ipvsadm设置的转发规则，那么就会有50% 机会 master director 把包转给 
 backup，backup又有50%机会把包转给 master，master 收到包后，又有50%机会把包转给 backup，然后陷入死循环。这种情况只会出现在VIP:PORT组合中。
