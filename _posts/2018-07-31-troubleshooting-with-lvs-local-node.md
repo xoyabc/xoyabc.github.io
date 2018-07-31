@@ -83,6 +83,7 @@ eth1 119.253.282.6
   改为
   virtual_server fwmark 5 {
   ```
+  
 2. DR2/RS2-172.17.85.55
 
  - Director2 的内网VIP 172.17.85.56配置 iptables ，除了 Director1 以外的包，都设置 mask 为4。
