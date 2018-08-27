@@ -48,7 +48,7 @@ PS，当然也可以在cron中使用`SHELL=/bin/bash`声明shell的解释器,也
 ```
 ## 错误分析
 
-### cron error: bad username
+### cron: Error: bad username
 
 该错误提示为/etc/crontab中指定了不存在的用户，本例中为ubuntu，实际该用户并不存在。
 
