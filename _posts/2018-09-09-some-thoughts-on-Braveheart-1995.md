@@ -15,7 +15,7 @@ keywords: movie, Braveheart
  
  - 此片的编剧姓氏也是华莱士
  
- - 王妃是伊萨贝拉
+ - 片中的王妃是伊萨贝拉王妃
  
  - 爱德华二世是男同（有人说片头有交代，我没看出来，不过后来看到长腿把他的军师下楼后，他反过来杀长腿，才感觉他俩关系不一般）
  
@@ -38,3 +38,9 @@ keywords: movie, Braveheart
 | 斯图亚特王朝  | 1603—1649，1660—1714 |
 | 汉诺威王朝    | 1714—1901 |
 | 温莎王朝      | 1910至今 |
+
+REF：
+
+[英格兰历史](https://zh.wikipedia.org/wiki/%E8%8B%B1%E6%A0%BC%E8%98%AD%E6%AD%B7%E5%8F%B2)
+
+[BBC:英国历代王朝系列 ](https://movie.douban.com/subject/3057978/)
