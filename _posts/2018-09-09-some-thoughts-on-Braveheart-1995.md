@@ -1,9 +1,8 @@
 ---
 layout: post
 title: 《勇敢的心》观看记录
-categories: python
-description: 《勇敢的心》
-keywords: linux
+categories: movie
+keywords: movie, Braveheart
 ---
 
 第一次使用淘票票的票纸纪念语，还是晒一下吧，重点在右下角。
