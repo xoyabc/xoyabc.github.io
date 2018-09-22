@@ -6,8 +6,6 @@ description: 在ESXI5.5中为ubuntu14.04系统的虚拟机安装VMware Tools
 keywords: python, pexpect
 ---
 
-## 问题
-
 统计ESXI中的虚拟机IP时，因未安装Vmware Tools，在虚拟机摘要选项卡处，查看不到虚拟机的IP地址。
 
 ![install vmware tools in esxi 5.5-1.png](https://i.loli.net/2018/09/22/5ba653e3db5d1.png)
