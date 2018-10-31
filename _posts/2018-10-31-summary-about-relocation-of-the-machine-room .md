@@ -131,7 +131,7 @@ keywords: linux
   
   说明：Gi/3，Gi/4，Gi/5，Gi/6为连接的交换机端口。
   
-### 关闭磁盘自检fsck
+### 关闭磁盘自检(fsck)
 
 ```shell
 # Method 1
