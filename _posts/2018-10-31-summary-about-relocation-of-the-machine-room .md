@@ -17,9 +17,7 @@ keywords: linux
   
   ## 信息统计
   
-  共计69台机器，其中90%机器系统均为ESXI 5.x，虚拟机居多，实际虚机有450台，由于CMDB里有统计不全或统计错误的问题，期间编写了获取ESXI 下虚机
-  
-  信息的脚本，参见 [get_esxi_host_and_vm_info](https://github.com/xoyabc/scripts/tree/master/get_esxi_host_and_vm_info)
+  共计69台机器，其中90%机器系统均为ESXI 5.x，虚拟机居多，实际虚机有450台，由于CMDB里有统计不全或统计错误的问题，期间编写了获取ESXI 下虚机信息的脚本，参见 [get_esxi_host_and_vm_info](https://github.com/xoyabc/scripts/tree/master/get_esxi_host_and_vm_info)
   
   - 确认哪些机器需要搬迁，
   - 统计机器的SN号和所在机柜
