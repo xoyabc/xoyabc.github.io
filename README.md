@@ -52,6 +52,10 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 5. 修改「关于」页面。
 
    pages/about.md 文件内容对应网站的「关于」页面，里面的内容多为个人相关，将它们替换成你自己的信息，包括 \_data 目录下的 skills.yml 和 social.yml 文件里的数据。
+   
+6. 增加访问量统计(added by xoyabc on 08/11/2018)
+
+   http://ibruce.info/2015/04/04/busuanzi/
 
 ## 贴心提示
 
