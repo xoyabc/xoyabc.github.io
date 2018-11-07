@@ -182,7 +182,7 @@ sed -ri.bak 's#^(.*)/(.*)(2)(\s*)$#\1/\20\4#g' /etc/fstab
 
 现象：
 
-```
+```shell
 heartbeat[4912]: 2018/10/10_23:21:47 ERROR: Current node [cm-proxy34-171-dexin] not in configuration!
 heartbeat[4912]: 2018/10/10_23:21:47 info: By default, cluster nodes are named by `uname -n` and must be declared with a 'node' directive in the ha.cf file.
 heartbeat[4912]: 2018/10/10_23:21:47 info: See also: http://linux-ha.org/wiki/Ha.cf#node_directive
@@ -196,7 +196,7 @@ heartbeat[4912]: 2018/10/10_23:21:47 debug: Exiting from pid 4912 [rc=6]
 
 使用hostname将主机名改为和 `/etc/ha.d/ha.cf` 中的一致即可。也可先将主机名改为与node名称一致，待启动heartbeat后，再使用 `hostname` 命令改回原来的主机名即可。
 
-### ESXI 重启后找不到第二块存储器
+### ESXI 重启后找不到存储器
 
 NFS 有一台ESXI宿主机启动后，第二块存储器始终添加不上。
 
@@ -206,4 +206,4 @@ NFS 有一台ESXI宿主机启动后，第二块存储器始终添加不上。
  
 ## 后记
   
-  前天晚上(`2018/11/06`) 最后一批机器已经搬到楼上了，中间又遇到了存储器添加不上的问题，所幸后来解决了(处理方法参见本文中的`搬迁过程中遇到的问题及解决办法`总)，搬迁之旅终于告一段落...
+  前天晚上(`2018/11/06`) 最后一批机器已经搬到楼上了，中间又遇到了存储器添加不上的问题，所幸后来解决了(处理方法参见本文中的`搬迁过程中遇到的问题及解决办法`)，搬迁之旅终于告一段落...
