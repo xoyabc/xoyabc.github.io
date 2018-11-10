@@ -6,7 +6,9 @@ description: shell 常用命令
 keywords: shell
 ---
 
-# 搬运自 `https://github.com/mds1455975151/tools/blob/master/shell/README.md`
+
+
+搬运自 `https://github.com/mds1455975151/tools/blob/master/shell/README.md`
 
 
 # 主机初始化
