@@ -47,8 +47,7 @@ if [[ "${ary[@]}" =~ $v ]]
 <!-- {% endraw %}) -->
 # 中文转拼音
 <!-- {% raw %} -->
-```
-shell
+```shell
 yum install -y ruby
 gem update --system
 gem install chinese_pinyin
