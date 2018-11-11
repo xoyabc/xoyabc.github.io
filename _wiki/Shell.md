@@ -1443,7 +1443,7 @@ delimiter
 
 9 实例
 <!-- {% raw %} -->
-
+    
     {
     从1叠加到100{
         echo $[$(echo +{1..100})]
@@ -2087,7 +2087,6 @@ delimiter
           if (app == "xload" ) {system("xload&"); return}
           if (app == "exit")   {x = 0}
         }
-    }
     }
     
 <!-- {% endraw %}) -->
