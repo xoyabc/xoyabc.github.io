@@ -47,7 +47,7 @@ if [[ "${ary[@]}" =~ $v ]]
 <!-- {% endraw %}) -->
 # 中文转拼音
 <!-- {% raw %} -->
-```shell
+``` bash
 yum install -y ruby
 gem update --system
 gem install chinese_pinyin
@@ -57,7 +57,9 @@ python
 http://pypinyin.mozillazg.com/zh_CN/master/index.html
 echo `pypinyin -s NORMAL 中文`|sed 's/ //g'
 ```
+
 <!-- {% endraw %}) -->
+
 # 资料
 - https://github.com/dylanaraps/pure-bash-bible
 
