@@ -18,6 +18,7 @@ sh host_init.sh
 ```
 
 # 常用变量
+<!-- {% raw %} -->
 ``` bash
 $BASH_SOURCE-输出脚本名称
 $0: 执行脚本的名字
@@ -28,6 +29,7 @@ $$:代表所在命令的PID
 $!:代表最后执行的后台命令的PID
 $?:代表上一个命令执行是否成功的标志，如果执行成功则$? 为0，否则不为0
 ```
+<!-- {% endraw %}) -->
 
 - shell退出
     - exit 退出脚本
@@ -37,12 +39,14 @@ $?:代表上一个命令执行是否成功的标志，如果执行成功则$? �
     - break 中断整个循环
 
     - continue 退出本次循环
-
+<!-- {% raw %} -->
 ```
 if [[ "${ary[@]}" =~ $v ]]
 =~ 左面是输出数组的所有值 =~ 右面是设定变量的值 然后看右面的值 是否在左面输出的里面 ，如果在就为真，这个好像和awk的一样吧，左面可以完全等于右面，也可以包涵右面但是不能被右面包涵
 ```
+<!-- {% endraw %}) -->
 # 中文转拼音
+<!-- {% raw %} -->
 ```
 shell
 yum install -y ruby
@@ -54,6 +58,7 @@ python
 http://pypinyin.mozillazg.com/zh_CN/master/index.html
 echo `pypinyin -s NORMAL 中文`|sed 's/ //g'
 ```
+<!-- {% endraw %}) -->
 # 资料
 - https://github.com/dylanaraps/pure-bash-bible
 
