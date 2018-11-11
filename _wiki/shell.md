@@ -1,15 +1,13 @@
 ---
 layout: wiki
-title: Shell
-categories: Shell
-description: Shell 常用命令
-keywords: Shell
+title: shell
+categories: shell
+description: shell 常用命令
+keywords: shell
 ---
 
 
-
 搬运自 `https://github.com/mds1455975151/tools/blob/master/shell/README.md`
-
 
 # 主机初始化
 ``` bash
