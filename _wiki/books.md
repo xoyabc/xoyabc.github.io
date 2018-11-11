@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: books
+title: Books
 categories: books
 description: books
 keywords: books
