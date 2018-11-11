@@ -1,9 +1,9 @@
 ---
 layout: wiki
 title: Shell
-categories: shell
-description: shell 常用命令
-keywords: shell
+categories: Shell
+description: Shell 常用命令
+keywords: Shell
 ---
 
 
