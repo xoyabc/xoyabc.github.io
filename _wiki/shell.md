@@ -65,8 +65,7 @@ echo `pypinyin -s NORMAL 中文`|sed 's/ //g'
 
 8 脚本
 <!-- {% raw %} -->
-{
-
+    {
     #!/bin/sh         # 在脚本第一行脚本头 # sh为当前系统默认shell,可指定为bash等shell
     shopt             # 显示和设置shell中的行为选项
     sh -x             # 执行过程
