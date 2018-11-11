@@ -1564,13 +1564,13 @@ delimiter
     打印提示{
         cat <<EOF
         #内容
-EOF
+     EOF
         }
     登陆远程执行命令{
         # 特殊符号需要 \ 转义
         ssh root@ip << EOF
         #执行命令
-EOF
+    EOF
         }
     数学计算的小算法{
         #!/bin/sh
@@ -2017,7 +2017,7 @@ EOF
             fi
             echo "$Ip    $IpStatus    $complaint" >> $(date +%Y%m%d_%H%M%S).log
         done
-}
+    }
     Web Server in Awk{
         #gawk -f file
         BEGIN {
