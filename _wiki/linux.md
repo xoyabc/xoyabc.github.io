@@ -61,3 +61,14 @@ lsof -c Vim
 ```
 
 注意程序名区分大小写。
+
+## 安全知识
+
+### ubunbu下使用 `fail2ban`自动封禁攻击IP
+
+(pam-servicesshd-ignoring-max-retries)[https://serverfault.com/questions/588297/pam-servicesshd-ignoring-max-retries]
+
+
+
+
+
