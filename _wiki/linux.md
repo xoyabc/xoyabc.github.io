@@ -68,18 +68,12 @@ lsof -c Vim
 可自动读取`var/log/auth.log`下的攻击者IP，使用iptables进行封禁
 
 [pam-servicesshd-ignoring-max-retries](https://serverfault.com/questions/588297/pam-servicesshd-ignoring-max-retries)
-```
-
-37
-down vote
-While the other answers are correct in elimiating the error message you got, consider that this error message may just be a symptom of another underlying problem.
-
-You get these messages because there are many failing login attempts via ssh on your system. There may be someone trying to brute-force into your box (was the case when I got the same messages on my system). Read your var/log/auth.log for research...
-
-If this is the case, you shoud consider installing a tool like 'fail2ban' (sudo apt-get install fail2ban on Ubuntu). It automatically reads the log files of your system, searches for multiple failed login attempts and blocks the malicious clients for a configurable time via iptables...
-```
 
 
+> While the other answers are correct in elimiating the error message you got, consider that this error message may just be a symptom of another underlying problem.
 
+> You get these messages because there are many failing login attempts via ssh on your system. There may be someone trying to brute-force into your box (was the case when I got the same messages on my system). Read your var/log/auth.log for research...
+
+> If this is the case, you shoud consider installing a tool like 'fail2ban' (sudo apt-get install fail2ban on Ubuntu). It automatically reads the log files of your system, searches for multiple failed login attempts and blocks the malicious clients for a configurable time via iptables...
 
 
