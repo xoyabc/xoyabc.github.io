@@ -65,6 +65,7 @@ lsof -c Vim
 ## 安全知识
 
 ### ubunbu下使用 `fail2ban`自动封禁攻击IP
+可自动读取`var/log/auth.log`下的攻击者IP，使用iptables进行封禁
 
 [pam-servicesshd-ignoring-max-retries](https://serverfault.com/questions/588297/pam-servicesshd-ignoring-max-retries)
 ```
