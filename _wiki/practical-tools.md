@@ -16,4 +16,6 @@ keywords: 工具, 推荐
 | 多地ping测试                          | [Ping and mtr from multiple locations](https://ping.pe/) |           |
 | dns查询                              | [https://dnschecker.org/#A/](https://dnschecker.org/#A/)  |           |
 | MobaXterm                              | [http://www.0daydown.com/?s=MobaXterm](http://www.0daydown.com/?s=MobaXterm)  | MobaXterm是一款豪华、全功能的终端软件MobaXterm，支持ssh/rdp/telnet/vnc/ftp/sftp 等多种协议 |
-| wordpress博客                              | [themes flat ](https://themeisle.com/themes/flat/) [install WordPress Themes](https://docs.themeisle.com/article/4-how-to-install-wordpress-themes)  |           |
+| wordpress模板                              | [themes flat ](https://themeisle.com/themes/flat/)  |           |
+| wordpress模板安装                          |  [install WordPress Themes](https://docs.themeisle.com/article/4-how-to-install-wordpress-themes) |           |
+
