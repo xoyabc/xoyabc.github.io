@@ -80,6 +80,10 @@ lsof -c Vim
 
 [TCP三次握手，四次断开](https://www.chen-hao.com.cn/posts/34933/)
 
+[MTU的奥秘](https://dabing1022.github.io/2017/10/08/MTU%E7%9A%84%E5%A5%A5%E7%A7%98/)
+
+[一起学习 DNS](https://dabing1022.github.io/2017/02/04/%E4%BA%86%E8%A7%A3%E8%AE%A4%E8%AF%86DNS/)
+
 [聊一聊HTTP的Range, Content-Range](https://dabing1022.github.io/2016/12/24/%E8%81%8A%E4%B8%80%E8%81%8AHTTP%E7%9A%84Range,%20Content-Range/)
 
 [DNS劫持和HTTP劫持有什么区别](http://bigsec.com/bigsec-news/wechat-16824-yunyingshangjiechi)
