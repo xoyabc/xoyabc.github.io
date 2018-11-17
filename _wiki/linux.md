@@ -76,4 +76,17 @@ lsof -c Vim
 
 > If this is the case, you shoud consider installing a tool like 'fail2ban' (sudo apt-get install fail2ban on Ubuntu). It automatically reads the log files of your system, searches for multiple failed login attempts and blocks the malicious clients for a configurable time via iptables...
 
+## HTTP & TCP & DNS
+
+[TCP三次握手，四次断开](https://www.chen-hao.com.cn/posts/34933/)
+
+[聊一聊HTTP的Range, Content-Range](https://dabing1022.github.io/2016/12/24/%E8%81%8A%E4%B8%80%E8%81%8AHTTP%E7%9A%84Range,%20Content-Range/)
+
+[DNS劫持和HTTP劫持有什么区别](http://bigsec.com/bigsec-news/wechat-16824-yunyingshangjiechi)
+
+
+
+
+
+
 
