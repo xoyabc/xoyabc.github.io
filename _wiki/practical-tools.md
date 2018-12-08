@@ -18,6 +18,6 @@ keywords: 工具, 推荐
 | MobaXterm                              | [http://www.0daydown.com/?s=MobaXterm](http://www.0daydown.com/?s=MobaXterm)  | MobaXterm是一款豪华、全功能的终端软件MobaXterm，支持ssh/rdp/telnet/vnc/ftp/sftp 等多种协议 |
 | wordpress模板                              | [themes flat ](https://themeisle.com/themes/flat/)  |           |
 | wordpress模板安装                          |  [install WordPress Themes](https://docs.themeisle.com/article/4-how-to-install-wordpress-themes) |           |
-| 在线数据分析并出图                              | https://me.bdp.cn/home.html  |           |
+| 可视化分析                              | https://me.bdp.cn/home.html  |           |
 
 
