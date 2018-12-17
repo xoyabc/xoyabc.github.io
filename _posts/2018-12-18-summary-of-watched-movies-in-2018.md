@@ -90,6 +90,8 @@ keywords: python, movie
 
 ## 10，一些难忘的场次
 
+见备注列
+
 ![movie-2018-unforgettable-showings.png](https://i.loli.net/2018/12/18/5c17e5c53c44c.png)
 
 完~~~
