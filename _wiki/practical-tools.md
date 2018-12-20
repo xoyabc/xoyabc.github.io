@@ -19,5 +19,5 @@ keywords: 工具, 推荐
 | wordpress模板                              | [themes flat ](https://themeisle.com/themes/flat/)  |           |
 | wordpress模板安装                          |  [install WordPress Themes](https://docs.themeisle.com/article/4-how-to-install-wordpress-themes) |           |
 | 可视化分析                              | [https://me.bdp.cn/home.html](https://me.bdp.cn/home.html)  |           |
-
+| Excel 转 markdown                       | [copy-table-in-excel-and-paste-as-a-markdown-table](https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/)  |           |
 
