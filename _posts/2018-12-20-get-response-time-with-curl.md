@@ -51,7 +51,7 @@ time_namelookup: 0.002
 
 ## 实例分析
 
-近日，公司有同事反馈通过代理访问外网特别慢，遂在代理服务器上直接访问外网，查看各个响应时间，发现 DNS 解析耗时较长，耗时 5.514秒。
+近日，公司有同事反馈通过代理访问外网特别慢，遂在代理服务器上直接访问外网，查看各个响应时间，发现 DNS 解析耗时较长。
 
 ### 访问百度
 ![curl-get-total-time.png](https://raw.githubusercontent.com/xoyabc/xoyabc.github.io/master/images/blog/curl-get-total-time.png)
@@ -59,7 +59,7 @@ time_namelookup: 0.002
 ### 下载大文件
 
 ```shell
-root@cm-public-link-meet102-10-dexin#172.17.102.10:~$curl -ksvo /dev/null https://ys.louxiaohui.com/mysql-bin.000015 -w 'time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\ntime_namelookup: %{time_namelookup}\n' 
+root@test:~$curl -ksvo /dev/null https://ys.louxiaohui.com/mysql-bin.000015 -w 'time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\ntime_namelookup: %{time_namelookup}\n' 
 * Hostname was NOT found in DNS cache 
 *   Trying 95.169.20.135... 
 * Connected to ys.louxiaohui.com (95.169.20.135) port 443 (#0) 
@@ -134,8 +134,7 @@ time_namelookup: 4.513
 
 由于所在运营商为北京联通，根据之前的测试结果，使用查询时间较短的DNS： 202.106.0.20，202.106.195.68
 
-以下为北京联通下各个DNS的查询时长
-
+以下为之前测试的北京联通各个DNS的查询时长：
 
 | DNS             | 平均查询时长 |
 | --------------- | ------------ |
@@ -150,7 +149,7 @@ time_namelookup: 4.513
 | 180.76.76.76    | 16.67        |
 
 
-REF:
+## REF:
 
 [curl命令测试网络请求中DNS解析、响应时间](https://blog.csdn.net/dreamer2020/article/details/78152576)
 
