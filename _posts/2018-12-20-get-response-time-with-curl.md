@@ -18,5 +18,20 @@ time_total: 0.186
 time_namelookup: 0.002
 ```
 
+各个指标含义：
 
-建连时间，服务器返回首字节所用时间，请求所用总时间，DNS解析
+ - time_connect
+ 
+ 建连时间
+ 
+ - time_starttransfer
+ 
+ 服务器返回首字节所用时间
+ 
+ - time_total
+ 
+ 请求所用总时间
+ 
+ - time_namelookup
+ 
+ DNS解析
