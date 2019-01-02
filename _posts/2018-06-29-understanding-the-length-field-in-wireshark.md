@@ -12,6 +12,7 @@ keywords: network, wireshark
 ## length含义
 
 Wireshark is showing you the length of the Ethernet frame that is handed to it, which may or may not include the FCS.
+
 wireshark显示的长度为以太网帧的长度，不包括FCS(Frame check sequence)[帧校验序列]
 
 ## 常见协议头大小
@@ -27,9 +28,11 @@ FCS 4 bytes of Ethernet checksum # 帧尾CRC校验
 ## length计算
 
 MTU=MSS+IP header(20 bytes)+tcp header(20 bytes)
+
 length=MTU+Ethernet header(14bytes)
 
 其中MSS为Maximum Segment Size，即最大报文段长度，其受MTU大小影响，这里的MTU指的是三层的，二层的MTU固定为1500，不能修改。
+
 MTU为Maximum Transmission Unit,即最大传输单元，需要注意MTU如果太小会影响收到数据包的速度，表现为下载过慢。
 
 ```
@@ -55,7 +58,9 @@ MTU为Maximum Transmission Unit,即最大传输单元，需要注意MTU如果太
  - 解决
  
  抓包后发现：
+ 
  28.41的Length为1294，MSS为1240,推断其MTU为1280
+ 
  28.210的Length为1514，MSS为1460，推断其MTU为1500
  
  猜测其网卡设置不同，进入宿主机看网卡设置，28.41的网卡类型不是E1000，28.210的E1000，将28.41的网卡类型改为E1000后测试，恢复。
