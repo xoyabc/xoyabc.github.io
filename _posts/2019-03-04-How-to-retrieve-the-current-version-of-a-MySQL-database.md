@@ -331,3 +331,12 @@ ii  mysql-server-core-5.5              5.5.54-0ubuntu0.14.04.1            amd64 
 | STATUS | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
 | rpm 或 dpkg | 否 | 否 | 其中 rpm 用于 Fedora / RHEL / Red Hat / CentOS LINUX发行版，dpkg 用于 Debian / Ubuntu LINUX发行版 |
 
+## REF
+
+[how-to-retrieve-the-current-version-of-a-mysql-database](https://stackoverflow.com/questions/8987679/how-to-retrieve-the-current-version-of-a-mysql-database)
+
+[tell-version-mysql-unix-linux-command](https://www.cyberciti.biz/faq/tell-version-mysql-unix-linux-command/)
+
+
+
+
