@@ -318,26 +318,16 @@ ii  mysql-server-core-5.5              5.5.54-0ubuntu0.14.04.1            amd64 
 注：此方法不适用于编译安装的 MySQL
 
 
+## 总结
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| 命令 | 是否需要登录 MySQL | 是否适用于 Fedora / RHEL / Red Hat / CentOS / Debian / Ubuntu | 备注 | 
+| :-----------: | :-----------: | :------------: | :------------: |
+| SELECT VERSION(); | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| show variables like '%version%'; | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| mysql --version | 否 | 是 | 实际查到的是客户端的版本号 |
+| mysqladmin version -u USER -p PASSWD | 否 | 是 |  |
+| select @@version; | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| mysql -uroot -p | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| STATUS | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| rpm 或 dpkg | 否 | 否 | 其中 rpm 用于 Fedora / RHEL / Red Hat / CentOS LINUX发行版，dpkg 用于 Debian / Ubuntu LINUX发行版 |
 
