@@ -20,10 +20,10 @@
   url: https://wsgzao.github.io
   
 - name: 冰蓝记录思考的地方
-  url: http://lanbing510.info/
+  url: http://lanbing510.info
   
 - name: 小土刀(Docker完全指南)
-  url: https://wdxtub.com/2017/05/01/docker-guide/
+  url: https://wdxtub.com/2017/05/01/docker-guide
 
 - name: RaPoSpectre的个人博客(python)
   url: https://www.rapospectre.com
@@ -32,4 +32,7 @@
   url: https://blog.mritd.me
 
 - name: ZRONG's Blog(读书/游戏)
-  url: https://blog.zengrong.net/
+  url: https://blog.zengrong.net
+
+- name: MoeLove(《Kubernetes从上手到实践》 作者)
+  url: https://moelove.info
