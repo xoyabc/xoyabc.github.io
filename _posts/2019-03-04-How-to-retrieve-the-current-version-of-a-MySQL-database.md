@@ -10,8 +10,6 @@ keywords: mysql
 
 ## 法一
 
-需要登录到 MySQL 终端 
-
 使用 `mysql -uroot -p` 连接到MySQL，然后使用以下命令：
 
 ```shell
@@ -45,8 +43,6 @@ MySQL [(none)]> SELECT VERSION();
 ```
 
 ## 法二
-
-需要登录到 MySQL 终端 
 
 使用 `mysql -uroot -p` 连接到MySQL，然后使用以下命令：
 
@@ -88,8 +84,6 @@ MySQL [(none)]> show variables like '%version%';
 
 ## 法三
 
-无需登录 MySQL 终端 
-
 如果你懒的话，这个就是最快的方法了（ :smile: 懒人必备），Centos / RHEL ，Ubuntu 均适用。
 
 使用 `mysql --version` 或 `mysql -V`
@@ -110,8 +104,6 @@ A：此方法实际查到的是客户端的版本号，因客户端与服务端�
 ```
 
 ## 法四
-
-无需登录 MySQL 终端
 
 使用 `mysqladmin version -u USER -p PASSWD`
 
@@ -137,8 +129,6 @@ Threads: 3  Questions: 1305  Slow queries: 3  Opens: 80  Flush tables: 1  Open t
 ```
 
 ## 法五
-
-需要登录到 MySQL 终端 
 
 使用 `mysql -uroot -p` 连接到MySQL，然后使用以下命令：
 
@@ -174,8 +164,6 @@ MySQL [(none)]> select @@version;
 
 ## 法六
 
-需要登录到 MySQL 终端
-
 登录 MySQL 后，在顶部处即可查看版本信息。
 
 ```shell
@@ -201,8 +189,6 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ```
 
 ## 法七
-
-需要登录到 MySQL 终端
 
 使用 `mysql -uroot -p` 连接到MySQL，然后使用以下命令：
 
@@ -256,7 +242,7 @@ Threads: 2  Questions: 1622  Slow queries: 4  Opens: 80  Flush tables: 1  Open t
 
 ## 法八
 
-使用包管理器查询
+使用包管理器命令查询
 
 - Fedora / RHEL / Red Hat / CentOS 
 
@@ -336,7 +322,3 @@ ii  mysql-server-core-5.5              5.5.54-0ubuntu0.14.04.1            amd64 
 [how-to-retrieve-the-current-version-of-a-mysql-database](https://stackoverflow.com/questions/8987679/how-to-retrieve-the-current-version-of-a-mysql-database)
 
 [tell-version-mysql-unix-linux-command](https://www.cyberciti.biz/faq/tell-version-mysql-unix-linux-command/)
-
-
-
-
