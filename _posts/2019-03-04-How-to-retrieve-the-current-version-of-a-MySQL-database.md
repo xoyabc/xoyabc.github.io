@@ -96,14 +96,14 @@ MySQL [(none)]> show variables like '%version%';
 
 示例：
 
-```
+```shell
 [root@host ~]# mysql --version
 mysql  Ver 14.14 Distrib 5.6.40, for linux-glibc2.12 (i686) using  EditLine wrapper
 ```
 
 译者注：
 
-```
+```plain
 Q：这里查到的版本号为 5.6.40，而法一及法二中查到的版本号为 5.6.40-log，为什么不一致呢？
 
 A：此方法实际查到的是客户端的版本号，因客户端与服务端的版本一般一致，可用于快速查看版本。
@@ -117,7 +117,7 @@ A：此方法实际查到的是客户端的版本号，因客户端与服务端�
 
 示例：
 
-```
+```shell
 [root@host ~]# mysqladmin -uroot -p version
 Enter password: 
 mysqladmin  Ver 8.42 Distrib 5.6.40, for linux-glibc2.12 on i686
@@ -142,7 +142,9 @@ Threads: 3  Questions: 1305  Slow queries: 3  Opens: 80  Flush tables: 1  Open t
 
 使用 `mysql -uroot -p` 连接到MySQL，然后使用以下命令：
 
-`select @@version;`
+```shell
+select @@version;
+```
 
 示例：
 
@@ -168,8 +170,7 @@ MySQL [(none)]> select @@version;
 | 5.6.40-log | # 版本号
 +------------+
 1 row in set (0.00 sec)
-``
-
+```
 
 ## 法六
 
@@ -177,11 +178,13 @@ MySQL [(none)]> select @@version;
 
 登录 MySQL 后，在顶部处即可查看版本信息。
 
-```
+```shell
 mysql -uroot -p
 ```
 
-```
+示例：
+
+```shell
 [root@host ~]# mysql -uroot -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -210,6 +213,7 @@ STATUS
 示例：
 
 ```shell
+
 [root@host ~]# mysql -uroot -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -247,6 +251,7 @@ Uptime:                 1 hour 49 min 20 sec
 
 Threads: 2  Questions: 1622  Slow queries: 4  Opens: 80  Flush tables: 1  Open tables: 73  Queries per second avg: 0.247
 --------------
+
 ```
 
 ## 法八
