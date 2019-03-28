@@ -3,7 +3,7 @@ layout: post
 title: 苹果手机播放异常排查
 categories: windows
 description: 苹果手机播放ts文件有声音无画面
-keywords: python, pexpect
+keywords: video, iPhone
 ---
 
 苹果手机播放ts文件有声音无画面。
