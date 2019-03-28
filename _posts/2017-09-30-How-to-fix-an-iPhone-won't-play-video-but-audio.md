@@ -22,7 +22,7 @@ keywords: video, iPhone
 
 ![2.jpg](https://i.loli.net/2019/03/29/5c9d02eead08d.jpg)
 
-## 苹果官方提供的视频检测工具​
+## 使用苹果官方提供的视频检测工具检测
 
 安装包： [HTTPLiveStreamingTools333.dmg](http://pan.baidu.com/s/1gfriuTP)
 
