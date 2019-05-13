@@ -150,7 +150,7 @@ Output        test    #test左边有六个空格
 
 #左对齐
 Old    '%-10s' % ('test',)
-New    '{:10}'.format('test')
+New    '{:<10}'.format('test')
 Output    test       #test右边有六个空格   
 
 #字典 
