@@ -17,6 +17,8 @@ php使用curl扩展请求HTTPS链接报sslv3 alert 错误
 
 ## 解决办法
 
+将 `3`(ssl v3.0) 改为 `4`(tls v1.0)
+
 将
 ```
 curl_setopt($ch, CURLOPT_SSLVERSION, 3);   
