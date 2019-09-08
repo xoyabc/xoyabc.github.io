@@ -50,7 +50,7 @@ curl: (56) Received HTTP code 400 from proxy after CONNECT
 
 不过可以安装第三方模块，使 nginx 支持处理 HTTPS 请求，下面详细说下安装及配置方法。
 
-## 安装第三方模块
+## 使用第三方模块
 
 参考： https://github.com/chobits/ngx_http_proxy_connect_module#install
 
@@ -147,9 +147,15 @@ curl -v -l -H "Content-type:application/json" -X POST -d '{post_data}' https://s
 {"status":0,"result":{"shortUrl":"https://dwz.cn/6666666"},"content_type":"application/json"}
 ```
 
-以下两段内容译自 RFC 中的 CONNECT 方法说明。
+## HTTP 代理
 
-CONNECT 请求使代理服务器建立一条到目标服务器的隧道，成功建立后，请求会保持原样转发给目标服务器，当通信双方断开连接时，隧道也随之关闭。隧道通常通过一个或多个代理，建立一条端到端的虚拟线路，届时便可以使用SSL进行通信。
+HTTP代理通常使用 CONNECT 方法，也可以使用 POST, GET, PUT 和 DELETE 方法，下面分别说明
+
+### CONNECT 方法
+
+- RFC7231 中的 CONNECT 方法
+
+CONNECT 请求使代理服务器建立一条到目标服务器的隧道，成功建立后，请求会**保持原样**转发给目标服务器，当通信双方断开连接时，隧道也随之关闭。隧道通常通过一个或多个代理，建立一条端到端的虚拟线路，届时便可以使用SSL进行通信。
 
 CONNECT 请求是专为请求代理服务器设计的。**源服务器**收到 CONNECT 请求时，会返回一个 2xx 的状态码，表示连接成功建立。然而，大部分**源服务器**并不支持。（注：这里的**源服务器**应为代理服务器）
 
@@ -162,10 +168,65 @@ CONNECT 请求是专为请求代理服务器设计的。**源服务器**收到 C
    established.  However, most origin servers do not implement CONNECT.
 ```
 
- CONNECT is intended only for use in requests to a proxy.  An origin
-   server that receives a CONNECT request for itself MAY respond with a
-   2xx (Successful) status code to indicate that a connection is
-   established.  However, most origin servers do not implement CONNECT.
+- RFC7540 中的 CONNECT 方法
+
+在HTTP/1.x中，伪方法 CONNECT 用于将 HTTP 连接转换成到远程主机的隧道。CONNECT 主要用被 HTTP 代理用来建立与源服务器(目标服务器)的TLS会话，以便请求https资源。
+
+在 HTTP/2 中，不再有专门的 CONNECT 方法。通过将 ":method"伪头部字段设为 "CONNECT"，来在一个HTTP/2流上建立一个隧道
+
+```plain
+伪头部字段是http2内置的几个特殊的以”:”开始的key，用于替代HTTP/1.x中请求行/响应行中的信息，比如请求方法，响应状态码等。
+# HTTP/1.1 及 HTTP/2 请求对照
+GET /resource HTTP/1.1           HEADERS
+Host: example.org          ==>     + END_STREAM
+Accept: image/jpeg                 + END_HEADERS
+                                        :method = GET
+                                        :scheme = https
+                                        :path = /resource
+                                        host = example.org
+                                        accept = image/jpeg
+# HTTP/1.1 及 HTTP/2 响应对照
+HTTP/1.1 304 Not Modified        HEADERS
+ETag: "xyzzy"              ==>     + END_STREAM
+Expires: Thu, 23 Jan ...           + END_HEADERS
+                                     :status = 304
+                                     etag = "xyzzy"
+                                     expires = Thu, 23 Jan ...
+```
+
+### 非 CONNECT 方法
+
+通过 POST, GET, PUT 和 DELETE 方法实现 HTTP 代理，因此大多数代理防火墙均可以实现。
+
+过程如下：
+
+1，客户端发起请求待代理
+
+2，代理请求源服务器
+
+3，代理服务器收到源服务器返回的响应
+
+4，代理服务器将响应发送给客户端
+
+### 两种方法的请求日志
+
+- CONNECT 
+
+> curl -v -l -H "Content-type:application/json" -X POST -d '{post_data}' https://service_domain/urlserver/long2short/create -x '192.168.1.1:10101' -A 'UA_CONNECT'
+
+```bash
+代理服务器日志
+
+192.168.1.88 - - [09/Sep/2019:00:40:55 +0800] "CONNECT test.domain.com:443 HTTP/1.1" 200 3832 "-" "UA_CONNECT"
+
+源服务器日志
+198.222.241.219 198.222.241.219 - - 0 [09/Sep/2019:00:40:55 +0800] "POST /urlserver/long2short/create HTTP/1.1" 200 184 "-" "UA_CONNECT"
+
+```
+
+
+- 非 CONNECT
+
 
 
 
@@ -178,11 +239,13 @@ CONNECT 请求是专为请求代理服务器设计的。**源服务器**收到 C
 
 [HTTP_CONNECT_tunneling](https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling)
 
-[the CONNECT method request](https://tools.ietf.org/html/rfc7231#section-4.3.6)
+[the rfc7231 CONNECT method request](https://tools.ietf.org/html/rfc7231#section-4.3.6)
 
+[the rfc7540 CONNECT method request](https://httpwg.org/specs/rfc7540.html#CONNECT)
 
+[HTTP2伪头部字段](https://blog.csdn.net/yangguosb/article/details/80650692)
 
-
+[rfc7540中文翻译](https://github.com/abbshr/rfc7540-translation-zh_cn/blob/master/8-zh-cn.md)
 
 
 
