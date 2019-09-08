@@ -155,7 +155,7 @@ HTTP代理通常使用 CONNECT 方法，也可以使用 POST, GET, PUT 和 DELET
 
 - RFC7231 中的 CONNECT 方法
 
-CONNECT 请求使代理服务器建立一条到目标服务器的隧道，成功建立后，请求会**保持原样**转发给目标服务器，当通信双方断开连接时，隧道也随之关闭。隧道通常通过一个或多个代理，建立一条端到端的虚拟线路，届时便可以使用SSL进行通信。
+CONNECT 请求使代理服务器建立一条到目标服务器的隧道，成功建立后，请求会**保持原样**，并转发给目标服务器，当通信双方断开连接时，隧道也随之关闭。隧道通常通过一个或多个代理，建立一条端到端的虚拟线路，届时便可以使用SSL进行通信。
 
 CONNECT 请求是专为请求代理服务器设计的。**源服务器**收到 CONNECT 请求时，会返回一个 2xx 的状态码，表示连接成功建立。然而，大部分**源服务器**并不支持。（注：这里的**源服务器**应为代理服务器）
 
@@ -210,26 +210,28 @@ Expires: Thu, 23 Jan ...           + END_HEADERS
 
 ### 两种方法的请求日志
 
+测试机IP：192.168.1.88
+
+代理服务器IP：198.222.241.219
+
+
 - CONNECT 
+
+请求链接为 `https://service_domain/urlserver/long2short/create`（https）
 
 > curl -v -l -H "Content-type:application/json" -X POST -d '{post_data}' https://service_domain/urlserver/long2short/create -x '192.168.1.1:10101' -A 'UA_CONNECT'
 
-```bash
-代理服务器日志
+- POST
 
-192.168.1.88 - - [09/Sep/2019:00:40:55 +0800] "CONNECT test.domain.com:443 HTTP/1.1" 200 3832 "-" "UA_CONNECT"
+请求链接为 `http://service_domain/urlserver/long2short/create`（http）
 
-源服务器日志
-198.222.241.219 198.222.241.219 - - 0 [09/Sep/2019:00:40:55 +0800] "POST /urlserver/long2short/create HTTP/1.1" 200 184 "-" "UA_CONNECT"
+> curl -v -l -H "Content-type:application/json" -X POST -d '{post_data}' http://service_domain/urlserver/long2short/create -x '192.168.1.1:10101' -A 'UA_WITHOUT_CONNECT'
 
-```
+![nginx-forward-1.jpg](https://i.loli.net/2019/09/09/oFrEA5ksuGcbwH3.jpg)
 
+CONNECT 时，代理服务器日志中 request 字段记录的是与源服务器建立连接，源服务器日志的 x_forwarded_for 字段中，记录的只有代理服务器IP  `192.168.1.88, 198.222.241.219`
 
-- 非 CONNECT
-
-
-
-
+POST 时，代理服务器日志中 request 字段记录的是完整请求URL，源服务器日志的 x_forwarded_for 字段中，记录的是测试服务器IP和我代理服务器IP`198.222.241.219`
 
 ## REF
 
@@ -246,17 +248,3 @@ Expires: Thu, 23 Jan ...           + END_HEADERS
 [HTTP2伪头部字段](https://blog.csdn.net/yangguosb/article/details/80650692)
 
 [rfc7540中文翻译](https://github.com/abbshr/rfc7540-translation-zh_cn/blob/master/8-zh-cn.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
