@@ -233,6 +233,7 @@ Expires: Thu, 23 Jan ...           + END_HEADERS
 
 ![nginx-forward-1.jpg](https://i.loli.net/2019/09/09/oFrEA5ksuGcbwH3.jpg)
 
+
 CONNECT 时，代理服务器日志中 request 字段记录的是使用 CONNECT 与源服务器建立连接的URL，即 `访问域名:443` ，源服务器日志的 x_forwarded_for 字段中，记录的只有代理服务器IP  `198.222.241.219`
 
 POST 时，代理服务器日志中 request 字段记录的是完整请求URL，源服务器日志的 x_forwarded_for 字段中，记录的是测试服务器IP和我代理服务器IP `192.168.1.88, 198.222.241.219`
