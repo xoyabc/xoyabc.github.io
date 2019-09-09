@@ -72,22 +72,24 @@ make -j 4 install
 
 ### 配置 vhost
 
+```bash
 server {
     listen 10101 default_server;
     # dns resolver used by forward proxying
     resolver                       8.8.8.8;
     resolver_timeout 3s;
-	# forward proxy for CONNECT request
+    # forward proxy for CONNECT request
     proxy_connect;
-    root /data/www;
+    proxy_connect_allow            443 563;
     index index.html;
 
     # forward proxy for non-CONNECT request
     location / {
             proxy_pass http://$http_host$request_uri;
-			proxy_set_header Host $http_host;
+	    proxy_set_header Host $http_host;
     }
 }
+```
 
 ### 测试
 
