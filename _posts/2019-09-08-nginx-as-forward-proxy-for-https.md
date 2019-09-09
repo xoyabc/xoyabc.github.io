@@ -1,6 +1,6 @@
 ---
 layout: post
-title: nginx添加第三方模块支持代理 CONNECT 请求
+title: nginx添加第三方模块支持代理 HTTPS 请求
 categories: linux
 description: nginx使用ngx_http_proxy_connect_module模块，使其能处理 CONNECT 请求
 keywords: linux, CONNECT
@@ -44,7 +44,7 @@ curl: (56) Received HTTP code 400 from proxy after CONNECT
 
 1，与代理服务器 192.168.1.1 的10101端口建连(tcp)
 
-2，由于请求地址协议为HTTPS，curl 发送 CONNECT 请求来建立隧道，以便进行后续的SSL通信
+2，由于请求地址协议为HTTPS，curl 发送 CONNECT 方法请求来建立隧道，以便进行后续的SSL通信
 
 3，nginx 作为代理时，不支持处理 CONNECT 方法的请求，于是返回 400 错误码。
 
