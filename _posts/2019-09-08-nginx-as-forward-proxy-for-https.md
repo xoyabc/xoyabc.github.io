@@ -80,6 +80,8 @@ server {
     resolver_timeout 3s;
     # forward proxy for CONNECT request
     proxy_connect;
+    # specifies a list of port numbers to which the proxy CONNECT method may connect. 
+    # the default ports are 443 and 563. only the listed ports can make connections.
     proxy_connect_allow            443 563;
     index index.html;
 
