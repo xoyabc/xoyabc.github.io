@@ -237,7 +237,7 @@ POST 时，代理服务器日志中 request 字段记录的是完整请求URL，
 
 [nginx-as-forward-proxy-for-https](https://superuser.com/questions/604352/nginx-as-forward-proxy-for-https)
 
-[https://github.com/chobits/ngx_http_proxy_connect_module](ngx_http_proxy_connect_module)
+[https://github.com/chobits/ngx_http_proxy_connect_module](ngx_http_proxy_connect_module) 
 
 [HTTP_CONNECT_tunneling](https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling)
 
