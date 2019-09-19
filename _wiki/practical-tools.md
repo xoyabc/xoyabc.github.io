@@ -22,3 +22,4 @@ keywords: 工具, 推荐
 | Excel 转 markdown                       | [copy-table-in-excel-and-paste-as-a-markdown-table](https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/)  |           |
 | win10通过命令行查看密码                       | `netsh wlan show profile lxhwifi_1Gbps key=clear`  |   其中`lxhwifi_1Gbps`为WiFi名称 |
 | http调试插件                       | [http://restclient.net/](http://restclient.net/)  |   发送POST，GET等请求，可自动生成CURL命令，目前仅有火狐浏览器插件 |
+| 视频会议                       | https://room.cafe/ |   无需安装客户端，使用谷歌浏览器器即可，支持白板，聊天，白板设计简洁明了 |
