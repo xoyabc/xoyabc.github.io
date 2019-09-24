@@ -7,7 +7,7 @@ keywords: python, pexpect
 ---
 
 
-python中删除字符串中的空白字符。
+python 中删除字符串中的空白字符。
 
 主要参考StackOverflow答案总结。
 
