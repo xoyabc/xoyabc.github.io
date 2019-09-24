@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一些crontab的使用建议及排错思路
-categories: python
+categories: linux
 description: 一些crontab的使用建议及排错思路
 keywords: linux
 ---
