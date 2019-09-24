@@ -19,7 +19,6 @@ python中删除字符串中的空白字符。
 | 转义字符 | ' ' | '\t' | '\n' | '\r' | '\f' | '\v' |
 | ASCII name | SP | HT | NL | CR | FF | VT |
 | English name | space | horizontal tab | newline | carriage return | form feed | vertical tab |
-| REF | [string.html](https://docs.python.org/2/library/string.html) | [whitespace.html](https://infohost.nmt.edu/tcc/help/pubs/python/web/whitespace.html) |
 
 
 ## 去除空格
@@ -166,3 +165,8 @@ feeds, but it does not remove them in the middle of the string).
 ## 参考
 
 [remove-all-whitespace-in-a-string-in-python](https://stackoverflow.com/questions/8270092/remove-all-whitespace-in-a-string-in-python)
+
+[string.html](https://docs.python.org/2/library/string.html)
+
+[whitespace.html](https://infohost.nmt.edu/tcc/help/pubs/python/web/whitespace.html)
+
