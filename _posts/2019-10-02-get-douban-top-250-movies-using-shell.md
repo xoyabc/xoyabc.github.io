@@ -6,8 +6,6 @@ description: 获取豆瓣电影 Top250 信息
 keywords: linux, pup, jq
 ---
 
-# 64行shell获取豆瓣电影Top250信息
-
 ## 说明
 
 1，使用 `pup` 解析 html 元素，`jq` 解析 json 数据，详细介绍见参考链接
