@@ -23,3 +23,4 @@ keywords: 工具, 推荐
 | win10通过命令行查看密码                       | `netsh wlan show profile lxhwifi_1Gbps key=clear`  |   其中`lxhwifi_1Gbps`为WiFi名称 |
 | http调试插件                       | [http://restclient.net/](http://restclient.net/)  |   发送POST，GET等请求，可自动生成CURL命令，目前仅有火狐浏览器插件 |
 | 视频会议                       | https://room.cafe/ |   无需安装客户端，使用谷歌浏览器器即可，支持白板，聊天，白板设计简洁明了 |
+| MySQL 语法检查                       | http://cn.piliapp.com/mysql-syntax-check/ |   每次只能检查一行 |
