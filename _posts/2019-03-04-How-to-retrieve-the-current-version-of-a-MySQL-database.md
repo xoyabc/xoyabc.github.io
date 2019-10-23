@@ -311,11 +311,13 @@ ii  mysql-server-core-5.5              5.5.54-0ubuntu0.14.04.1            amd64 
 | SELECT VERSION(); | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
 | show variables like '%version%'; | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
 | mysql --version | 否 | 是 | 实际查到的是客户端的版本号 |
-| mysqladmin version -u USER -p PASSWD | 否 | 是 |  |
+| mysqladmin version -u USER -p PASSWD | 否 | 是 | 若通过代理(proxysql)连接，显示的是 代理的版本号 |
 | select @@version; | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
-| mysql -uroot -p | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
-| STATUS | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号 |
+| mysql -uroot -p | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号，若通过代理(proxysql)连接，显示的是 代理的版本号 |
+| STATUS | 是 | 是 | 可结合 `-e` 命令，不登陆 MySQL 获取版本号，若通过代理(proxysql)连接，显示的是 代理的版本号 |
 | rpm 或 dpkg | 否 | 否 | 其中 rpm 用于 Fedora / RHEL / Red Hat / CentOS LINUX发行版，dpkg 用于 Debian / Ubuntu LINUX发行版 |
+
+综上，推荐使用 `SELECT VERSION();` , `show variables like '%version%';` , `select @@version;`
 
 ## REF
 
