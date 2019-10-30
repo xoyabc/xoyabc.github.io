@@ -25,5 +25,6 @@ keywords: 工具, 推荐
 | 视频会议                       | https://room.cafe/ |   无需安装客户端，使用谷歌浏览器器即可，支持白板，聊天，白板设计简洁明了 |
 | MySQL 语法检查                       | [http://cn.piliapp.com/mysql-syntax-check/](http://cn.piliapp.com/mysql-syntax-check/) |   每次只能检查一行 |
 | 在线PPT                       | [幻灯片演示](https://gitpitch.com/) | 支持 GitHub，Bitbucket   |
-
+| IPv4地址查询工具(纯真版)                       | [http://www.cz88.net/ip/](http://www.cz88.net/ip/) | 支持 GitHub，Bitbucket   |
+| IPV6地址查询                     | [http://ip.ss.zxinc.org/ipquery/](http://ip.ss.zxinc.org/ipquery/) | 首页 http://ip.ss.zxinc.org/   |
 
