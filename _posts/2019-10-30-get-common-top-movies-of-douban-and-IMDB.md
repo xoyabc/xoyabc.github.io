@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 同时入选豆瓣Top250 及 IMDB top250 的影片
+title: 同时入选豆瓣 top250 及 IMDB top250 的影片
 categories: linux
-description: 获取入选豆瓣Top250 及 IMDB top250 的影片
+description: 获取入选豆瓣 top250 及 IMDB top250 的影片
 keywords: linux, python, csv
 ---
 
@@ -22,8 +22,6 @@ keywords: linux, python, csv
 ## csv 文件写入
 
 使用 DictWriter 类，将字典映射到 csv 行中。
-
-The csv.DictWriter class operates like a regular writer but maps Python dictionaries into CSV rows.
 
 ```python
 #!/usr/bin/python3
