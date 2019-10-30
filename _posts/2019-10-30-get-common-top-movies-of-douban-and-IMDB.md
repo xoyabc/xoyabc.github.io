@@ -254,6 +254,7 @@ if __name__ == '__main__':
 
 [Python CSV tutorial](http://zetcode.com/python/csv/)
 
+[rank4douban](https://github.com/bimzcy/rank4douban/blob/master/update_snippets.py)
 
 
 
