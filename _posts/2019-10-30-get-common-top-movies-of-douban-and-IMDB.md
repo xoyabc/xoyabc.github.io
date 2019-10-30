@@ -6,18 +6,25 @@ description: 获取入选豆瓣 top250 及 IMDB top250 的影片
 keywords: linux, python, csv
 ---
 
+豆瓣博主`东方快车`的豆列`同时入选IMDB250和豆瓣电影250的电影`大概有一年没更新了，就写脚本跑了下，取出同时入选的影片，共计101部。
+
+部分数据取自已开源的项目，部分使用之前写好的脚本，详见说明。
+
 ## 说明
 
 1，影片数据截止至 2019.10.28
 
-2，豆瓣 top 250 影片信息使用之前 shell 的脚本获取
+2，豆瓣 top 250 影片信息使用之前写的 `get_douban_top250_movies.sh` 获取
 
-3，IMDB top 250 影片及排名信息数据来自 `bimzcy` 的rank4douban 项目
+3，IMDB top 250 影片及排名信息数据来自 `R酱` 及 `bimzcy` 的rank4douban 项目
 
-4，脚本运行环境为 Python 3.6.8
+4，影片详细信息使用之前写好的 `get_douban_detailed_movie_info_by_requests.py` 
 
 5，使用 `csv` 模块读取及写入 csv 文件
 
+6，脚本运行环境为 Python 3.6.8
+
+7, 所有涉及到的脚本均在 `get_douban_movie_info` 项目中
 
 ## csv 文件写入
 
@@ -254,6 +261,6 @@ if __name__ == '__main__':
 
 [rank4douban](https://github.com/bimzcy/rank4douban/blob/master/update_snippets.py)
 
-
+[get_douban_movie_info](https://github.com/xoyabc/get_douban_movie_info)
 
 
