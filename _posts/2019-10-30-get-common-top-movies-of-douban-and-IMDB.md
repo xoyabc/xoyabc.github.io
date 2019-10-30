@@ -16,15 +16,17 @@ keywords: linux, python, csv
 
 2，豆瓣 top 250 影片信息使用之前写的 `get_douban_top250_movies.sh` 获取
 
-3，IMDB top 250 影片及排名信息数据来自 `R酱` 及 `bimzcy` 的rank4douban 项目
+3，IMDB top 250 影片及排名信息数据来自 `R酱` 及 `bimzcy` 的 `rank4douban` 项目
 
-4，影片详细信息使用之前写好的 `get_douban_detailed_movie_info_by_requests.py` 
+4，影片详细信息使用之前写好的 `get_douban_detailed_movie_info_by_requests.py` 获取
 
-5，使用 `csv` 模块读取及写入 csv 文件
+5, 所有涉及到的脚本均在 `get_douban_movie_info` 项目中
 
-6，脚本运行环境为 Python 3.6.8
+6，使用 `csv` 模块读取及写入 csv 文件
 
-7, 所有涉及到的脚本均在 `get_douban_movie_info` 项目中
+7，脚本运行环境为 Python 3.6.8
+
+
 
 ## csv 文件写入
 
@@ -262,5 +264,3 @@ if __name__ == '__main__':
 [rank4douban](https://github.com/bimzcy/rank4douban/blob/master/update_snippets.py)
 
 [get_douban_movie_info](https://github.com/xoyabc/get_douban_movie_info)
-
-
