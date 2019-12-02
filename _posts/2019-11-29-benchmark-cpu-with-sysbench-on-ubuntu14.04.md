@@ -78,11 +78,11 @@ stddev(标准差): 在相同时间内，多个线程分别完成的素数计算�
 
 AWS、阿里云、腾讯云机器配置
 
-| 厂商 | CPU型号 | 频率(GHz)	| 核数 |
+| 厂商 | 机型 | CPU型号 | 频率(GHz)	| 核数 |
 | :-----------: | :-----------: | :------------: |  :------------: |
-| AWS | Intel(R) Xeon(R) Platinum 8124M CPU | 3 | 8 |
-| 阿里云 | Intel(R) Xeon(R) Platinum 8163 CPU |	2.5	| 4 |
-| 腾讯云 | Intel(R) Xeon(R) Gold 61xx CPU | 2.5	| 4 |
+| AWS | c5.xlarge |Intel(R) Xeon(R) Platinum 8124M CPU | 3 | 4 |
+| 阿里云 | ecs.sn1ne.xlarge | Intel(R) Xeon(R) Platinum 8163 CPU |	2.5	| 4 |
+| 腾讯云 | S3.LARGE8 | Intel(R) Xeon(R) Gold 61xx CPU | 2.5	| 4 |
 
 ### 相同时间，比较event数
 
