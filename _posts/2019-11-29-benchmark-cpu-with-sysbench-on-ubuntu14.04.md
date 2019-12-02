@@ -421,5 +421,12 @@ Threads fairness:
 
 从以上数据看，AWS最好，腾讯次之，阿里最差。
 
+## REF
+
+[linux sysbench (一): CPU性能测试详解](https://www.jianshu.com/p/be8dfa2ec10b)
+
+[How to Benchmark Your System with Sysbench](https://www.howtoforge.com/how-to-benchmark-your-system-cpu-file-io-mysql-with-sysbench)
+
+[sysbench](https://github.com/akopytov/sysbench)
 
 
