@@ -6,7 +6,7 @@ description: 使用sysbench测试CPU性能
 keywords: linux, cpu
 ---
 
-sysbench 是一个开源的性能测试工具，可用来测试数据库及系统（CPU、内存、IO）性能。
+sysbench 是一个开源的性能测试工具，可用来测试数据库及系统（CPU、内存、IO）性能。 
 
 本文主要使用 sysbench 测试CPU性能，并对比 AWS，阿里云，腾讯云三家的数据，为后续上云选型提供数据支撑。
 
@@ -426,7 +426,4 @@ Threads fairness:
 [How to Benchmark Your System (CPU, File IO, MySQL) with Sysbench](https://www.howtoforge.com/how-to-benchmark-your-system-cpu-file-io-mysql-with-sysbench)
 
 [sysbench](https://github.com/akopytov/sysbench)
-
-
-
 
