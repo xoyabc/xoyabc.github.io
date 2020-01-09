@@ -90,8 +90,8 @@ keywords: python, movie
 
 ## 8，观看城市
 
-共计4个城市，北京119部，漯河3部，西安2部，杭州1部。
-![movie-2018-count.png](https://i.loli.net/2018/12/16/5c15ce633864c.png)
+共计4个城市，北京 239 部，漯河 4 部，重庆 1 部，贵阳 1 部。
+![movie-2019-count.png](https://i.loli.net/2020/01/10/EuSQU9JvByAbXiW.png)
 ![movie-2019-city.png.png](https://i.loli.net/2020/01/09/OUBtdyz4KvLG9i8.png)
 
 ## 9，影院
