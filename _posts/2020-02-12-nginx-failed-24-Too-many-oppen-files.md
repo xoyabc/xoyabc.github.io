@@ -59,7 +59,7 @@ session required /lib/security/pam_limits.so
 
 打开文件数 = worker_connections * worker_processes，其大小受 worker_rlimit_nofile 值限制。
 
-而此前 nginx worker_processes 值为1，由于 worker_connections 默认值为 512，于是打开文件数仅为 512，而请求量较大，最终导致打开文件
+而此前 nginx worker_processes 值为1，由于 worker_connections 默认值为 512，于是打开文件数仅为 512，由于请求量较大，最终导致打开文件
 数超过 nginx 处理上限，报`Too many open files`错误，导致用户入会接口响应超时，入会失败。
 
 
