@@ -156,6 +156,8 @@ events {
 
 [file-max与ulimit的关系与差别](https://www.cnblogs.com/zengkefu/p/5592117.html)
 
+[linux-unix-nginx-too-many-open-files](https://www.cyberciti.biz/faq/linux-unix-nginx-too-many-open-files/)
+
 [nginx accept() failed (24: Too many open files)](https://www.cnblogs.com/jkko123/p/6294586.html)
 
 [Nginx之——nginx:accept() failed (24: Too many open files)](https://blog.csdn.net/l1028386804/article/details/51425325)
