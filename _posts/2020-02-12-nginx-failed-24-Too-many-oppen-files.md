@@ -6,7 +6,7 @@ description: nginx “Too Many Open Files” 错误及解决
 keywords: nginx
 ---
 
-近期，由于疫情，大家都开始远程办公，公司业务量急剧上涨，在线用户数是平时的五倍。
+近期，由于疫情，大家都开始远程办公，公司业务量也急剧上涨，在线用户数是平时的五倍。
 
 昨日就遇到了入会超时的问题，查看 nginx 错误日志发现很多“failed (24: Too many open files)”的错误。
 
