@@ -50,6 +50,9 @@ fs.file-max = 6553560
 2.系统默认的ulimit对文件打开数量的限制是1024，修改/etc/security/limits.conf并加入以下配置，永久生效
 * soft nofile 65535 
 * hard nofile 65535
+
+要使 limits.conf 文件配置生效，必须要确保 pam_limits.so 文件被加入到启动文件中。查看 /etc/pam.d/login 文件中有：
+session required /lib/security/pam_limits.so
 ```
 
 后谷歌得知，nginx中也有限制文件打开数。
@@ -57,7 +60,7 @@ fs.file-max = 6553560
 打开文件数 = worker_connections * worker_processes，其大小受 worker_rlimit_nofile 值限制。
 
 而此前 nginx worker_processes 值为1，由于 worker_connections 默认值为 512，于是打开文件数仅为 512，而请求量较大，最终导致打开文件
-数超过 nginx 处理上限，报`Too many open files`错误，用户入会接口响应超时，入会失败。
+数超过 nginx 处理上限，报`Too many open files`错误，导致用户入会接口响应超时，入会失败。
 
 
 nginx 官方文档各参数含义
@@ -98,6 +101,7 @@ Syntax:	worker_cpu_affinity cpumask ...;
 worker_cpu_affinity auto [cpumask];
 Default:	—
 Context:	main
+
 Binds worker processes to the sets of CPUs. Each CPU set is represented by a bitmask of allowed CPUs. There should be a separate 
 set defined for each of the worker processes. By default, worker processes are not bound to any specific CPUs.
 ```
@@ -140,13 +144,18 @@ events {
 
 ## REF
 
+[worker_connections -- nginx.org](https://nginx.org/en/docs/ngx_core_module.html?&_ga=2.159146106.1928714280.1581517224-266900567.1581517224#worker_connections)
+
+[Optimizing Nginx Configuration](https://easyengine.io/tutorials/nginx/optimization/)
 
 [largest-allowed-maximum-number-of-open-files-in-linux](https://unix.stackexchange.com/questions/334187/largest-allowed-maximum-number-of-open-files-in-linux)
 
+[nginx-worker-rlimit-nofile](https://stackoverflow.com/questions/37591784/nginx-worker-rlimit-nofile)
 
+[配置nginx](https://www.jianshu.com/p/81445f571590)
 
+[file-max与ulimit的关系与差别](https://www.cnblogs.com/zengkefu/p/5592117.html)
 
+[nginx accept() failed (24: Too many open files)](https://www.cnblogs.com/jkko123/p/6294586.html)
 
-
-
-
+[Nginx之——nginx:accept() failed (24: Too many open files)](https://blog.csdn.net/l1028386804/article/details/51425325)
