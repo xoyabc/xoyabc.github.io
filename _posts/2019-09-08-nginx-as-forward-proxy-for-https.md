@@ -174,7 +174,7 @@ CONNECT 请求是专为请求代理服务器设计的。**源服务器**收到 C
 
 - RFC7540 中的 CONNECT 方法
 
-在HTTP/1.x中，伪方法 CONNECT 用于将 HTTP 连接转换成到远程主机的隧道。CONNECT 主要被 HTTP 代理用来建立与源服务器(目标服务器)的TLS会话，以便请求https资源。
+在HTTP/1.x中，伪方法 CONNECT 用于将 HTTP 连接转换成到远程主机的隧道。CONNECT 主要被 HTTP 代理用来建立与源服务器(目标服务器)的 TLS 会话，以便请求 https 资源。
 
 在 HTTP/2 中，不再有专门的 CONNECT 方法。通过将 ":method"伪头部字段设为 "CONNECT"，来在一个HTTP/2流上建立一个隧道
 
