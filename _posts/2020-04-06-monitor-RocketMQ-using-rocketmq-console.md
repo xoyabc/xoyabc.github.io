@@ -85,7 +85,7 @@ git clone -b release-rocketmq-console-1.0.0 https://github.com/apache/rocketmq-e
      <fileNamePattern>/var/log/app/rocketmq-console-%d{yyyy-MM-dd}.%i.log
  ```
  
- ## 编译
+## 编译
  
  ```shell
  cd rocketmq-externals-rocketmq-console-1.0.0/rocketmq-console/
@@ -94,7 +94,7 @@ git clone -b release-rocketmq-console-1.0.0 https://github.com/apache/rocketmq-e
  
  编译完成后会在 rocketmq-externals-rocketmq-console-1.0.0/rocketmq-console/target/ 路径下生成一个 jar 包，文件名为 rocketmq-console-ng-1.0.0.jar，如果机器环境和系统版本一致，其他配有 java 环境的机器就无需再次编译，使用此包即可。
  
- ## 启动
+## 启动
  
  **10.233.233.11:9876;10.233.233.12:9876;10.233.233.13:9876** 需要替换为实际的 nameserver 集群地址
  
