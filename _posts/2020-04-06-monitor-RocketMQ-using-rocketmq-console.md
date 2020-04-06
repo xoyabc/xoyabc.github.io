@@ -104,11 +104,14 @@ git clone -b release-rocketmq-console-1.0.0 https://github.com/apache/rocketmq-e
 
 ## 配置
 
-登录 rocketmq-console 后台，http://10.233.233.11:12581/#/consumer，在 MONITOR CONFIG 处配置实际使用的 consumer group，将 minCount 及 maxDiffTotal 均设为1（也可根据实际情况配置，我们监控是通过日志，所以统一设为1）
-
 ```plain
 这里 `10.233.233.11` 为运行 `rocketmq-console` 的机器IP
 ```
+
+登录 rocketmq-console 后台，http://10.233.233.11:12581/#/consumer，在 MONITOR CONFIG 处配置实际使用的 consumer group，将 minCount 及 maxDiffTotal 均设为1（也可根据实际情况配置，我们监控是通过日志，所以统一设为1）
+
+![rocketmq-console.png](https://i.loli.net/2020/04/06/dxlhWpVLTBsUzKk.png)
+
 
 ## 监控
 
