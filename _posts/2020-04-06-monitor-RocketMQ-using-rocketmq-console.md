@@ -130,6 +130,7 @@ org.apache.rocketmq.client.exception.MQBrokerException: CODE: 206  DESC: the con
 ```
 
    "count":0      表示消费者数量
+   
    "diffTotal":0  表示消息积压数量
 
 监控 `diffTotal` 值即可，其阈值可通过观察实际集群的数据设置。附上取值命令：
