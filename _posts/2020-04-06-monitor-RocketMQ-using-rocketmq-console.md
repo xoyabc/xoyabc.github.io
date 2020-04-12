@@ -6,7 +6,7 @@ description: 使用 rocketmq-console 监控RocketMQ消费组下线及消息积�
 keywords: linux, RocketMQ
 ---
 
-主要介绍使用 rocketmq-console 监控消费者下线，主要包括安装、编译及配置，之后通过编写 openfalcon 自定义脚本实现日志告警。
+主要介绍使用 rocketmq-console 监控消费者下线，包括安装、编译及配置，之后通过编写 openfalcon 自定义脚本实现日志告警。
 
 ## 安装
 
