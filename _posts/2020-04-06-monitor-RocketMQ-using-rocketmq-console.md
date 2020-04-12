@@ -21,7 +21,7 @@ apt-get install -y maven
 
 > vim /etc/maven/settings.xml 
 
-在 <mirrors> </mirrors> 节点下加入以下配置：
+在 `<mirrors> </mirrors>` 节点下加入以下配置：
 
 ```plain
       <mirror>
@@ -60,37 +60,37 @@ git clone -b release-rocketmq-console-1.0.0 https://github.com/apache/rocketmq-e
 
 ```shell
 将
-                            <!--<button name="client" ng-click="monitor(consumerGroup.group)"-->
-                            <!--class="btn btn-sm btn-primary" type="button">Monitor Config-->
-                            <!--</button>-->
+ <!--<button name="client" ng-click="monitor(consumerGroup.group)"-->
+ <!--class="btn btn-sm btn-primary" type="button">Monitor Config-->
+ <!--</button>-->
                             
 改为
 
-                           <button name="client" ng-click="monitor(consumerGroup.group)"
-                                   class="btn btn-sm btn-primary" type="button">Monitor Config
-                           </button>         
+  <button name="client" ng-click="monitor(consumerGroup.group)"
+          class="btn btn-sm btn-primary" type="button">Monitor Config
+  </button>         
 ```
 
  + rocketmq-console/src/main/java/org/apache/rocketmq/console/task/MonitorTask.java
    
-   * 将 `@Scheduled(cron = "* * * * * ?")` 改为 `@Scheduled(cron = "0 */1 * * * ?")`
-   * 文件头前面加入 `import org.springframework.scheduling.annotation.Scheduled;`，即每分钟执行一次。
+   * 将 `@Scheduled(cron = "* * * * * ?")` 改为 `@Scheduled(cron = "0 */1 * * * ?")`，即每分钟执行一次。
+   * 文件头前面加入 `import org.springframework.scheduling.annotation.Scheduled;`
    
  - rocketmq-console/src/main/resources/logback.xml
  
  替换${user.home}为目标目录  /var/log/app/，并创建对应目录，`mkdir -p /var/log/app`，
  
- ```shell
+```shell
      <file>/var/log/app/rocketmq-console.log</file>
      <fileNamePattern>/var/log/app/rocketmq-console-%d{yyyy-MM-dd}.%i.log
- ```
+```
  
 ## 编译
  
- ```shell
+```shell
  cd rocketmq-externals-rocketmq-console-1.0.0/rocketmq-console/
  mvn clean package -Dmaven.test.skip=true
- ```
+```
  
  编译完成后会在 rocketmq-externals-rocketmq-console-1.0.0/rocketmq-console/target/ 路径下生成一个 jar 包，文件名为 rocketmq-console-ng-1.0.0.jar，如果机器环境和系统版本一致，其他配有 java 环境的机器就无需再次编译，使用此包即可。
  
