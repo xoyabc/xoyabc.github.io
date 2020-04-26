@@ -43,23 +43,33 @@ forks          = 1
 
 ## 修改前后执行时间对比
 
-测试命令： `time ansible -i upgrade_hosts cdts  -m shell -a "uname -n"`
+选取十台设备，运行 `for i in $(seq 1 1 2);do echo ${i};sleep 1;done` 命令测试所用时间。
 
-- 修改前
+测试命令： `time ansible -i upgrade_hosts all -m shell -a " for i in \$(seq 1 1 2);do echo \${i};sleep 1;done "` 
+
+> $ 需要转义
+
+- 修改前（并发数为5）
 
 ```shell
-real    0m1.732s
-user    0m1.200s
-sys     0m0.360s
+real    0m6.548s
+user    0m1.584s
+sys     0m0.432s
 ```
 
- - 修改后
+ - 修改后（并发数为1）
  
 ```shell
-real    0m4.129s
-user    0m1.248s
-sys     0m0.364s
+real    0m23.008s
+user    0m1.528s
+sys     0m0.892s
 ```
+
+| 理论所需时长(s) | 串行时所用时长(s) | 并发数为 5 时所用时长(s) |
+| :-----------: | :-----------: | :------------: |
+| 20 | 23.008 | 6.548 |
+
+串行执行时所用时长是并发执行时的4倍。
 
 
 ## REF
@@ -67,7 +77,4 @@ sys     0m0.364s
 [the-configuration-file](https://docs.ansible.com/ansible/2.7/reference_appendices/config.html?#the-configuration-file)
 
 [Ansible的配置文件](https://ansible-tran.readthedocs.io/en/latest/docs/intro_configuration.html)
-
-
-
 
