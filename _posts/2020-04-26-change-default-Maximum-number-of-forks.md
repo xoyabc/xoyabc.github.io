@@ -23,7 +23,7 @@ ansible 中默认的并发数为 5 ，若机器数量小于 5 台的服务在升
  - **~/.ansible.cfg** (位于用户家目录)
  - **/etc/ansible/ansible.cfg**
  
-因此，可以指定不同的配置文件来设置不同的并发数。
+因此，可以指定不同的配置文件，并设置不同的并发数来解决。
  
 ## 更改默认并发数
 
@@ -38,7 +38,9 @@ forks          = 1
 
 如果想保留原有的其他配置，可复制一份 ansible.cfg ，之后修改 `forks` 为 5 即可。
 
-> cat /etc/ansible/ansible.cfg |grep -Ev '^#' |sed '/^\s*$/d' |sed -r '/forks/s/(.*)=(.*)/\1= 1/g' > /path/to/yout/inventory_dir/ansible.cfg
+```shell
+cat /etc/ansible/ansible.cfg |grep -Ev '^#' |sed '/^\s*$/d' |sed -r '/forks/s/(.*)=(.*)/\1= 1/g' > /path/to/yout/inventory_dir/ansible.cfg
+```
 
 
 ## 修改前后执行时间对比
