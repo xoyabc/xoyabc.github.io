@@ -1,7 +1,7 @@
 ---
 layout: post
 title: nginx添加第三方模块支持代理 HTTPS 请求
-categories: linux
+categories: nginx
 description: nginx使用ngx_http_proxy_connect_module模块，使其能处理 CONNECT 请求
 keywords: linux, CONNECT
 ---
