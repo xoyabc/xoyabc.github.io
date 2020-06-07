@@ -74,9 +74,10 @@ unzip rocketmq-all-4.5.1-bin-release.zip -d /usr/local/
 修改启动参数值，以本机内存为 8G 示例：
 
 ```shell
-# 
+# runserver.sh
 sed -ri '/JAVA_OPT.*-server/s/-Xms.*-Xmx.*-Xmn[0-9]+(m|g)/-Xms2g -Xmx2g -Xmn1g/g' /usr/local/rocketmq-all-4.5.1-bin-release/bin/runserver.sh
 
+# runbroker.sh
 sed -ri '/JAVA_OPT.*-server/s/-Xms.*-Xmx.*-Xmn[0-9]+(m|g)/-Xms4g -Xmx4g -Xmn2g/g' /usr/local/rocketmq-all-4.5.1-bin-release/bin/runbroker.sh
 ```
 
