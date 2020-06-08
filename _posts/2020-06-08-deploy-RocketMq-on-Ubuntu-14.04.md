@@ -15,9 +15,7 @@ RocketMq 依赖 java 环境，因此需要先安装 java
 
 ### 下载包
 
-前往 [javase-jdk8-downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) 页面下载对应的 tar 包，下载时
-
-需要登录 Oracle 账号。也可以从度盘下载。
+前往 [javase-jdk8-downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) 页面下载对应的 tar 包，下载时需要登录 Oracle 账号。也可以从度盘下载。
 
 ### 安装
 
@@ -149,23 +147,25 @@ osPageCacheBusyTimeOutMills=5000
 
 第二台，vim broker-b.properties
 
- - 复制broker-a.properties
+ - 复制 broker-a.properties
  
- - 修改brokerName为broker-2
+ - 修改 brokerName 为broker-2
  
- - 修改brokerIP1为第二台机器IP
+ - 修改 brokerIP1 为第二台机器IP
 
 第三台，vim broker-c.properties
 
- - 复制broker-a.properties
+ - 复制 broker-a.properties
  
- - 修改brokerName为broker-3
+ - 修改 brokerName 为broker-3
  
- - 修改brokerIP1为第三台机器IP
+ - 修改 brokerIP1 为第三台机器IP
 
 ### 检查配置文件
 
-> cat /usr/local/rocketmq-all-4.5.1-bin-release/conf/3m-noslave/*.properties  |grep -E 'namesrvAddr|brokerClusterName|brokerName|brokerIP1'
+```shell
+cat /usr/local/rocketmq-all-4.5.1-bin-release/conf/3m-noslave/*.properties  |grep -E 'namesrvAddr|brokerClusterName|brokerName|brokerIP1'
+```
 
 ### 启动NameServer
 
@@ -210,10 +210,12 @@ nohup ./mqbroker -c /usr/local/rocketmq-all-4.5.1-bin-release/conf/3m-noslave/br
 # 停止 broker 及 NameServer
 
 sh bin/mqshutdown broker
+
 The mqbroker(36695) is running...
 Send shutdown request to mqbroker(36695) OK
 
-> sh bin/mqshutdown namesrv
+sh bin/mqshutdown namesrv
+
 The mqnamesrv(36664) is running...
 Send shutdown request to mqnamesrv(36664) OK
 ```
@@ -260,7 +262,6 @@ SELF_TEST_TOPIC
 test_audio_topic
 %RETRY%convertserver
 %RETRY%benchmark_consumer_37
-qsrocketmq
 ```
 
 
@@ -272,7 +273,7 @@ qsrocketmq
 
 ## REF
 
-[rocketMq排坑：如何设置rocketMq broker的ip地址](https://my.oschina.net/u/3476125/blog/897429)
+[ rocketMq 排坑：如何设置 rocketMq broker 的 ip 地址](https://my.oschina.net/u/3476125/blog/897429)
 
 [quick-start](https://rocketmq.apache.org/docs/quick-start/)
 
