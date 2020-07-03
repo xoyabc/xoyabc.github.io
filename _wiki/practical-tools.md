@@ -22,10 +22,10 @@ keywords: 工具, 推荐
 | Excel 转 markdown                       | [copy-table-in-excel-and-paste-as-a-markdown-table](https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/)  |           |
 | win10通过命令行查看密码                       | `netsh wlan show profile lxhwifi_1Gbps key=clear`  |   其中`lxhwifi_1Gbps`为WiFi名称 |
 | http调试插件                       | [http://restclient.net/](http://restclient.net/)  |   发送POST，GET等请求，可自动生成CURL命令，目前仅有火狐浏览器插件 |
-| 视频会议                       | https://room.cafe/ |   无需安装客户端，使用谷歌浏览器器即可，支持白板，聊天，白板设计简洁明了 |
+| 视频会议                       | [room.cafe](https://room.cafe/) |   无需安装客户端，使用谷歌浏览器器即可，支持白板，聊天，白板设计简洁明了 |
 | MySQL 语法检查                       | [http://cn.piliapp.com/mysql-syntax-check/](http://cn.piliapp.com/mysql-syntax-check/) |   每次只能检查一行 |
 | 在线PPT                       | [幻灯片演示](https://gitpitch.com/) | 支持 GitHub，Bitbucket   |
 | IPv4地址查询工具(纯真版)                       | [http://www.cz88.net/ip/](http://www.cz88.net/ip/) |   |
 | IPV6地址查询                     | [http://ip.ss.zxinc.org/ipquery/](http://ip.ss.zxinc.org/ipquery/) | 首页 http://ip.ss.zxinc.org/   |
 | SSL Labs                   | [SSL Labs](https://www.ssllabs.com/ssltest/) | SSL 服务器测试，包括证书信息及支持的协议   |
-| 录屏                   | [screenapp](https://screenapp.io/) [recordscreen](https://recordscreen.io/) | 无需安装软件，使用谷歌、火狐浏览器均可   |
+| 录屏                   | [screenapp](https://screenapp.io/) 或 [recordscreen](https://recordscreen.io/) | 无需安装软件，使用谷歌、火狐浏览器均可   |
