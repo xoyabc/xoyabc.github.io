@@ -28,4 +28,4 @@ keywords: 工具, 推荐
 | IPv4地址查询工具(纯真版)                       | [http://www.cz88.net/ip/](http://www.cz88.net/ip/) |   |
 | IPV6地址查询                     | [http://ip.ss.zxinc.org/ipquery/](http://ip.ss.zxinc.org/ipquery/) | 首页 http://ip.ss.zxinc.org/   |
 | SSL Labs                   | [SSL Labs](https://www.ssllabs.com/ssltest/) | SSL 服务器测试，包括证书信息及支持的协议   |
-
+| 录屏                   | [screenapp](https://screenapp.io/) [recordscreen](https://recordscreen.io/) | 无需安装软件，使用谷歌、火狐浏览器均可   |
