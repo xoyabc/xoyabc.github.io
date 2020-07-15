@@ -84,6 +84,8 @@ timestamps一个双向的选项，当一方不开启时，两方都将停用time
 
 [网站响应时快时慢的真相？只有 1% 的人知道 ](https://mp.weixin.qq.com/s/zoiZhS1wJTm28tBRSzZREg)
 
+[一场由tcp_timestamps 引发的无解追击案](https://blog.51cto.com/fuyuan2016/1795998)
+
 [TCP timestamp](https://perthcharles.github.io/2015/08/27/timestamp-intro/)
 
 [net.ipv4.tcp_timestamps引发的tcp syn无响应案](https://blog.csdn.net/pyxllq/article/details/80351827)
