@@ -73,7 +73,9 @@ timestamps一个双向的选项，当一方不开启时，两方都将停用time
 当然，如果client发送的SYN包中就不带timestamp，双向都将停用timestamp。
 ```
 
+### 解决
 
+禁用 net.ipv4.tcp_timestamps 或 net.ipv4.tcp_tw_recycle , 使用 `sysctl -w 内核参数=0`将值改为 0 即可。
 
 
 ## REF
