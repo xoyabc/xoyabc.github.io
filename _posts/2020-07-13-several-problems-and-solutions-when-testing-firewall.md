@@ -88,3 +88,5 @@ timestamps一个双向的选项，当一方不开启时，两方都将停用time
 
 [net.ipv4.tcp_timestamps引发的tcp syn无响应案](https://blog.csdn.net/pyxllq/article/details/80351827)
 
+[The TCP Timestamp Option](https://cloudshark.io/articles/tcp-timestamp-option/)
+
