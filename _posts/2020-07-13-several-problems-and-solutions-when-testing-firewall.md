@@ -40,14 +40,36 @@ keywords: linux
  - 抓包分析
 还是要使大招。同时在防火墙和后端 nginx server 上抓包。防火墙上的包文件名为 firewall.pcap，nginx 上的包文件为 nginx.pcap。
 
-wireshark 打开 firewall.pcap ,使用 `ip.addr == server IP` 过滤包，之后展开 IP 层详情信息，找到 `Identification` 的值
+1，wireshark 打开 firewall.pcap ,使用 `ip.addr == server IP` 过滤包，之后展开 IP 层详情信息，找到 `Identification` 的值，这里为 `32886`。
 
 ![firewall-1.png](https://i.loli.net/2020/07/16/TQVcyNqHz85LfPm.png)
 
+2，wireshark 打开 nginx.pcap，使用 `ip.id == 32886` 找到对应的包，这里序号为 80，查看 info 列发现无 `TSval` 值，由于服务器端同时开启了 `tcp_tw_recycle` 及 `tcp_timestamps`，linux 会丢弃所有来自远端的 timestamp 时间戳小于上次记录的时间戳(由同一个远端发出的)的任何数据包。换句话说，就是必须要保证数据包的时间戳是递增的。
 
+由于发出的 syn 包中的时间戳无 `TSval` 值，无法保证时间戳是递增，服务器上就会忽略掉这个 syn ，不返会 syn-ack 消息，表现为用户无法正常完成 tcp 3 次握手，`nc` 命令测试连接超时。在业务闲时，如果用户 NAT 的端口没有被使用过时，就可以正常打开；业务忙时，NAT 端口重复使用的频率高，很难分到没有被使用的端口。
 
+可以使用 `netstat -st | egrep -i "drop|reject|overflowed|listen|filter"` 命令查看因不符合时间戳递增规则被丢弃的数据包
 
+```shell
+# netstat -st | egrep -i "drop|reject|overflowed|listen|filter" 
 
+    8 ICMP packets dropped because they were out-of-window 
+
+    826164 passive connections rejected because of time stamp 
+
+    14 packets rejects in established connections because of timestamp 
+
+    826963 SYNs to LISTEN sockets dropped 
+```
+
+timestamps 说明：
+
+```
+timestamps一个双向的选项，当一方不开启时，两方都将停用timestamps。
+比如client端发送的SYN包中带有timestamp选项，但server端并没有开启该选项。
+则回复的SYN-ACK将不带timestamp选项，同时client后续回复的ACK也不会带有timestamp选项。
+当然，如果client发送的SYN包中就不带timestamp，双向都将停用timestamp。
+```
 
 
 
