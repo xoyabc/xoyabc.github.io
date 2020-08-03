@@ -17,6 +17,10 @@ keywords: linux
 
 网络拓扑：用户-->外网ALB-->防火墙 eth1-->防火墙 eth2-->nginx
 
+拓扑图：
+
+![防火墙部署架构.png](https://i.loli.net/2020/08/04/XF7HGhxzQrdDLmu.png)
+
 拓扑说明：
  - nginx 前实际上还挂有 NLB，为简化结构分析问题，在防火墙处直接将流量转给了 nginx
 
