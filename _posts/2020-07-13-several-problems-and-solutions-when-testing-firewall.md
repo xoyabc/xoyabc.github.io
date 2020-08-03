@@ -23,7 +23,7 @@ keywords: linux
 两台防火墙为主备工作模式，内部网络结构均为 NAT 模式，具体为 DNAT。外部流量进入防火墙时从 eth1 网口流入，之后会将数据包中的源地址转换为防火墙 eth2 地址，目标地址转换为 nginx，即"源地址--防火墙 eth1" -->"防火墙-->nginx"
 
 
-### 问题
+### 问题描述
 
 在一台 server 上使用 `nc -zv -w 5 IP 80` 命令分别测试到两台防火墙的 80 端口连通性，一个通，一个不通，通的为备机。
 
@@ -79,6 +79,103 @@ timestamps一个双向的选项，当一方不开启时，两方都将停用time
 
 禁用 net.ipv4.tcp_timestamps 或 net.ipv4.tcp_tw_recycle , 使用 `sysctl -w 内核参数=0`将值改为 0 即可。
 
+## 同一 VPC 下一台机器 ping 两个目标地址，其中一个不通
+
+
+### 问题描述
+
+源地址：10.80.69.94  该设备为 nginx
+
+两个目标地址均为防火墙，只是IP地址不通。
+目标地址：10.80.68.250 该设备为防火墙  不能 ping 通
+
+目标地址：10.80.64.194 该设备为防火墙  可以 ping 通	
+
+
+[root@nginx ~]# ip add
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 06:dd:18:6a:fc:10 brd ff:ff:ff:ff:ff:ff
+    inet 10.80.69.94/24 brd 10.80.69.255 scope global dynamic ens5
+       valid_lft 2386sec preferred_lft 2386sec
+    inet6 fe80::4dd:18ff:fe6a:fc10/64 scope link 
+       valid_lft forever preferred_lft forever
+[root@nginx ~]# 
+[root@nginx ~]# 
+[root@nginx ~]# ping -c 5 10.80.64.194
+PING 10.80.64.194 (10.80.64.194) 56(84) bytes of data.
+64 bytes from 10.80.64.194: icmp_seq=1 ttl=58 time=2.39 ms
+64 bytes from 10.80.64.194: icmp_seq=2 ttl=58 time=2.30 ms
+64 bytes from 10.80.64.194: icmp_seq=3 ttl=58 time=2.26 ms
+64 bytes from 10.80.64.194: icmp_seq=4 ttl=58 time=2.27 ms
+64 bytes from 10.80.64.194: icmp_seq=5 ttl=58 time=2.41 ms
+
+--- 10.80.64.194 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 2.267/2.331/2.410/0.060 ms
+[root@nginx ~]# 
+[root@nginx ~]# ping -c 5 10.80.68.250
+PING 10.80.68.250 (10.80.68.250) 56(84) bytes of data.
+
+--- 10.80.68.250 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+
+
+### 排查
+
+检查 10.80.68.250 的安全组、ACL、路由表，均未发现异常。与 10.80.64.194 进行对比，二者网络配置一致。
+
+接着排查 10.80.68.250 防火墙的安全策略，也未发现问题。之后对比两台防火墙的路由表，发现 10.80.68.250 的防火墙路由表中，与问题相关联的路由规则如下：
+    目标              下一个跃点        跃点数    标记      接口
+   0.0.0.0/0          10.80.68.1         10       A S     ethernet1/1
+   10.80.68.0/24      10.80.68.250       0        A C     ethernet1/1
+   10.80.68.250/32    0.0.0.0            0        A H     -
+   10.80.69.0/24      10.80.66.1         10       A S     ethernet1/2
+
+因此，源地址为 10.80.69.94 ，目的地址为 10.80.68.250 的 ping 请求，防火墙会从网络接口 eth1 收到包，而根据路由表的配置，输出接口为 eth2。
+
+通常情况下，由于默认启用反向路径过滤(rp_filter)功能，输入设备与输出设备不同时，反向路径过滤检查将会失败，该包将被丢弃。
+
+![rp_filte.png](https://i.loli.net/2020/08/04/2tzKY9kcNIMDOnU.png)
+
+为验证是该问题引起的，在 10.80.64.194 防火墙（正常的那台）上路由增加了一条 10.80.69.0/24 10.80.63.1 10 A S ethernet1/2 ，则从 10.80.69.94 ping 不通 10.80.64.194，反向测试成功。
+
+注：若防火墙在使用，切勿直接增加路由。
+
+### 解决
+
+ - 法一：修改防火墙路由表，使其从同一个网络接口输出。
+ 
+ 移除 “   10.80.69.0/24      10.80.66.1         10       A S     ethernet1/2” 的路由，使数据包其从 eth1 出去。
+  
+ - 法二：关闭实例的"源或目标检查"
+ 
+ a. 源/目标检查属性禁用后，实例会处理并未明确指定至该实例的网络通信。
+ 
+ b. 将实例的 sysctl 内核参数 "net.ipv4.conf.all.rp_filter" , "net.ipv4.conf.default.rp_filter" , "net.ipv4.conf.eth2.rp_filter" 修改为0或者2。
+ 
+
+```plain
+rp_filter (Reverse Path Filtering)参数定义了网卡对接收到的数据包进行反向路由验证的规则。
+0为关闭反向路由校验；1为开启严格的反向路由校验；2为开启松散的反向路由校验；
+对每个进来的数据包，只校验其源地址是否可达，即反向路由是否能通（通过任意网口），如果反向路径不通，则直接丢弃该数据包。
+
+当进行源地址检查时，rp_filter 的值为 net.ipv4.conf.all.rp_filter 和 net.ipv4.conf.eth0.rp_filter 中的最大值。
+
+若只关闭一个接口的 rp filter，应将 net.ipv4.conf.all.rp_filter 设为 0，并开启其他接口的 rp filter，再调整目标接口的 rp filter 为0。
+
+假设实例上有两个接口 eth0，eth1，若关闭 eth0 的 rp filter  ，操作如下：
+sysctl -w net.ipv4.conf.all.rp_filter=0
+sysctl -w net.ipv4.conf.eth0.rp_filter=0
+sysctl -w net.ipv4.conf.eth1.rp_filter=1
+```
+
+
 
 ## REF
 
@@ -96,3 +193,8 @@ timestamps一个双向的选项，当一方不开启时，两方都将停用time
 
 [The TCP Timestamp Option](https://cloudshark.io/articles/tcp-timestamp-option/)
 
+[ip-sysctl.txt](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
+
+[理解 net.ipv4.conf.all.rp_filter](https://zhuanlan.zhihu.com/p/129784373)
+
+[Linux内核参数之rp_filter](https://www.jianshu.com/p/717e6cd9d2bb)
