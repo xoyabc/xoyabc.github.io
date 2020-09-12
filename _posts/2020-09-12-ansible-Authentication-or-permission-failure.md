@@ -10,7 +10,7 @@ keywords: linux, ansible
 昨晚运行 playbook 时，始终连不上目标主机，playbook 中使用的用户为 ops， 报错信息如下：
 
 ```shell
-10.90.122.22 | UNREACHABLE!: Authentication or permission failure. In some cases, you may have been able to authenticate 
+192.168.122.22 | UNREACHABLE!: Authentication or permission failure. In some cases, you may have been able to authenticate 
 and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted 
 in "/tmp". Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp/ansible-tmp-1599834488.69-59423497030671 `" && echo 
 ansible-tmp-1599834488.69-59423497030671="` echo /tmp/.ansible/tmp/ansible-tmp-1599834488.69-59423497030671 `" ), exited with result 1
