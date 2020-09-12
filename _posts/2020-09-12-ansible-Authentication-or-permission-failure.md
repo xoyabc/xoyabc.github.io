@@ -7,7 +7,7 @@ keywords: linux, ansible
 ---
 
 
-昨晚运行 playbook 时，始终连不上目标主机，playbook 中使用的用户为 ops， 报错信息如下：
+昨晚上线运行 playbook 时，始终连不上目标主机，playbook 中使用的用户为 ops， 报错信息如下：
 
 ```shell
 192.168.122.22 | UNREACHABLE!: Authentication or permission failure. In some cases, you may have been able to authenticate 
@@ -34,7 +34,7 @@ drwx------ 3 sre sre 4.0K 2020-09-09 22:12 /tmp/.ansible/tmp/
 
 ## 解决
 
- - 注释 ·/etc/ansible/ansible.cfg· 中的 `remote_tmp` 配置
+ - 注释 `/etc/ansible/ansible.cfg` 中的 `remote_tmp` 配置
  - 修改 `remote_tmp` 配置的值为 `/tmp/.ansible-${USER}/tmp`
  
 
