@@ -45,6 +45,8 @@ drwx------ 3 sre sre 4.0K 2020-09-09 22:12 /tmp/.ansible/tmp/
 
 [remote-tmp](https://docs.ansible.com/ansible/2.3/intro_configuration.html#remote-tmp)
 
+[ansible小结（十一）ansible普通用户su切换问题](http://www.361way.com/ansible-su/4882.html)
+
 
 
 
