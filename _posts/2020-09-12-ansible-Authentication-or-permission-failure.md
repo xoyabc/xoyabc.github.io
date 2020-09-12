@@ -20,11 +20,7 @@ ansible-tmp-1599834488.69-59423497030671="` echo /tmp/.ansible/tmp/ansible-tmp-1
 
 尝试切换到 /etc/ansible/hosts ，使用相同的 inventory 文件往同一个目标组下发，运行正常。
 
-而二者区别就是 hosts 目录下有自定义的 ansible.cfg 配置文件，而 playbook 所使用的 inventory 文件所在目录无 ansible.cfg，根据 ansible 的配置文件读取
-
-顺序（ANSIBLE_CONFIG -> 当前目录 ansible.cfg --> 家目录 ansible.cfg --> /etc/ansible/ansible.cfg），playbook 执行时所使用的配置文件为 `/etc/ansible/ansible.cfg`。
-
-于是怀疑问题出在了 ansible 配置文件，对比两个配置文件，后者多了一个 `remote_tmp     = /tmp/.ansible/tmp` 的配置，其值正是报错信息中的路径。
+而二者区别就是 hosts 目录下有自定义的 ansible.cfg 配置文件，而 playbook 所使用的 inventory 文件所在目录无 ansible.cfg，根据 ansible 的配置文件读取顺序（ANSIBLE_CONFIG -> 当前目录 ansible.cfg --> 家目录 ansible.cfg --> /etc/ansible/ansible.cfg），playbook 执行时所使用的配置文件为 `/etc/ansible/ansible.cfg`。于是怀疑问题出在了 ansible 配置文件，对比两个配置文件，后者多了一个 `remote_tmp     = /tmp/.ansible/tmp` 的配置，其值正是报错信息中的路径。
 
 `remote_tmp` 定义了模块传送到目标主机后所存放的目标路径，模块执行完后，会被清理掉。
 
