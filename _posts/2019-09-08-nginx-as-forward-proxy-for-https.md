@@ -65,7 +65,7 @@ git clone https://github.com/chobits/ngx_http_proxy_connect_module.git
 # 进入之前安装时解压的源码目录
 cd openresty-1.13.6.2/
 ./configure --add-module=/opt/ngx_http_proxy_connect_module
-patch -p 1 < /opt/ngx_http_proxy_connect_module/patch/proxy_connect_rewrite_1014.patch
+patch -d build/nginx-1.13.6/ -p 1 < /opt/ngx_http_proxy_connect_module/patch/proxy_connect_rewrite_1014.patch
 make -j 4
 make -j 4 install 
 ```
