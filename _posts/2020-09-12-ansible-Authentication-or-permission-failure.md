@@ -35,8 +35,8 @@ drwx------ 3 sre sre 4.0K 2020-09-09 22:12 /tmp/.ansible/tmp/
 
  - 注释掉 `/etc/ansible/ansible.cfg` 中的 `remote_tmp` 配置
  - 修改 `remote_tmp` 配置的值为 `/tmp/.ansible-${USER}/tmp` （保证每个用户模块存放的临时目录不同）
-   
-   针对`普通用户没有家目录或者家目录没有写权限`，网上大部分文章都是建议 `remote_tmp` 设置为 `/tmp/.ansible/tmp`，若按建议设置后也会有同样问题。
+  
+  针对`普通用户没有家目录或者家目录没有写权限`，网上大部分文章都是建议将 `remote_tmp` 设置为 `/tmp/.ansible/tmp`，若按此设置后就会导致上述问题。
 
 ## 参考
 
