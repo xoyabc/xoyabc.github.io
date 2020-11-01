@@ -14,7 +14,7 @@ keywords: linux, nginx
 
 ## 实现方式
 
-nginx location 正则匹配为：`/rest/getUserInfo/*`，此时包含以下 URI 接口均会匹配到：
+nginx location 正则匹配为：`/rest/getUserInfo/*`，此时包含以下 URI 的接口均会匹配到：
 
 ```shell
     /rest/getUserInfo/
