@@ -98,7 +98,7 @@ git clone -b release-rocketmq-console-1.0.0 https://github.com/apache/rocketmq-e
  
  **10.233.233.11:9876;10.233.233.12:9876;10.233.233.13:9876** 需要替换为实际的 nameserver 集群地址
  
- > java -jar  /path_to_your_rocketmq_console_jar/rocketmq-console-ng-1.0.0.jar --server.port=12581 --rocketmq.config.namesrvAddr='10.233.233.11:9876;10.233.233.12:9876;10.233.233.13:9876'
+ > java -jar  /path_to_your_rocketmq_console_jar/rocketmq-console-ng-1.0.0.jar --server.port=12581 --rocketmq.config.namesrvAddr='10.233.233.11:9876;10.233.233.12:9876;10.233.233.13:9876' -server -Xms128m -Xmx128m -Xmn128m
 
 启动完成后的日志文件为 /var/log/app/rocketmq-console.log
 
