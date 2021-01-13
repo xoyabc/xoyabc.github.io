@@ -51,7 +51,7 @@ chdir("/root")                          = 0
 statfs("/Core", 
 ```
 
-卡在了 `statfs("/Core"` 处，而 **/Core**为 NFS 挂载点， 而此时 NFS 挂载超时，执行 `ls /Core` 同样卡住不动。将对应的 ansible python 进程 kill 后，load 值就降下来了。
+卡在了 `statfs("/Core"` 处，**/Core** 为 NFS 挂载点， 而此时 NFS 挂载超时，执行 `ls /Core` 同样卡住不动。将对应的 ansible python 进程 kill 后，load 值就降下来了。
 
 ## REF
 
