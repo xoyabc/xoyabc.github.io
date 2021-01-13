@@ -33,7 +33,7 @@ root     25973 25898  0 09:31 pts/3    00:00:00 grep --color=auto 6351
 
 使用 `strace` 跟踪
 
-`strace /usr/bin/python /home/sre/.ansible/tmp/ansible-tmp-1607219505.47-170658201224102/AnsiballZ_setup.py && sleep 0 `
+`strace /usr/bin/python /home/sre/.ansible/tmp/ansible-tmp-1607219505.47-170658201224102/AnsiballZ_setup.py && sleep 0`
 
 ```plain
 fstat(7, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
