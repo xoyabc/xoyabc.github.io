@@ -38,4 +38,5 @@ nginx location 正则匹配为：`/rest/getUserInfo/*`，此时包含以下 URI 
 ```shell
 /rest/getUserInfo/
 /rest/getUserInfo/$
+/rest/getUserInfo/.*
 ```
