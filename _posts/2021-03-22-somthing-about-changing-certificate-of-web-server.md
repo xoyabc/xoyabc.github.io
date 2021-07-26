@@ -31,7 +31,7 @@ keywords: linux, http
 
 ### 证书格式
 
-证书一般包含证书(扩展名为 crt)及公钥（扩展名为 key）
+证书一般包含证书(扩展名为 crt)及私钥（扩展名为 key）
 
 #### crt 证书
 
@@ -55,7 +55,7 @@ iGxvDl7I90VUwHwYDVR0jBBgwFoA
 -----END CERTIFICATE-----
 ```
 
-#### 公钥
+#### 私钥
 
 key 文件
 
