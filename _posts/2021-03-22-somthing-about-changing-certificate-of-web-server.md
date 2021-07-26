@@ -106,7 +106,8 @@ pem文件本质上只是将证书、密钥及证书认证中心证书（可有�
 
 > sudo cat /etc/ssl/xip.io/xip.io.crt /etc/ssl/xip.io/xip.io.key | sudo tee /etc/ssl/xip.io/xip.io.pem
 
- - **特别注意**
+- **特别注意**
+
 > 中间证书必须要有，否则在部分设备(已知的有小米手机)上打开网站会提示“证书不可信”的安全提示。
 
 ![certificate-1.png](https://i.loli.net/2021/07/27/rqFsI3bc8DpZm2l.png)
