@@ -29,11 +29,11 @@ keywords: linux, http
 - 用户证书
 由中间证书CA签发给用户的证书。用户证书由中间证书证明可信。用户证书是浏览器上实际体现和使用的证书。
 
-### 证书格式
+## 证书格式
 
 证书一般包含证书(扩展名为 crt)及私钥（扩展名为 key）
 
-#### crt 证书
+### crt 证书
 
 这里以包含证书链的完整证书为例，一般为三段，从上至下依次为：
 用户证书(crt)--中间证书(chain)–-根证书(root)（根证书可无）
@@ -55,7 +55,7 @@ iGxvDl7I90VUwHwYDVR0jBBgwFoA
 -----END CERTIFICATE-----
 ```
 
-#### 私钥
+### 私钥
 
 key 文件
 
@@ -65,11 +65,11 @@ pQ8tXI7cdSMjQJlWdtqpKxMGZD5X
 -----END PRIVATE KEY-----
 ```
 
-### 更换证书
+## 更换证书
 
 更换前备份，更换后平滑重启即可。
 
-#### Apache 更换证书
+### Apache 更换证书
 
 证书配置：
 
@@ -86,7 +86,7 @@ test.key 即为私钥
 ca.crt 内容为 crt 文件第三段，即 根证书
 
 
-#### nginx 更换证书
+### nginx 更换证书
 
 证书配置：
 ```shell
@@ -98,7 +98,7 @@ test.cer 内容为 crt 文件全部内容
 
 test.key 即为私钥
 
-#### haproxy 更换证书
+### haproxy 更换证书
 
 需要将证书及密钥文件以顺序拼接在一样来创建pem 文件。
 
@@ -122,7 +122,7 @@ bind *:443 ssl crt test.pem
 pem内容为 用户证书(crt) + 私钥（key）+ 中间证书(chain)，按顺序拼接在一起
 
 
-### REF
+## REF
 
  - [什么是证书链？证书链的详细介绍](https://www.anxinssl.com/9801.html)
  
