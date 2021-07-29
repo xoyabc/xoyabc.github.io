@@ -29,3 +29,4 @@ keywords: 工具, 推荐
 | IPV6地址查询                     | [http://ip.ss.zxinc.org/ipquery/](http://ip.ss.zxinc.org/ipquery/) | 首页 http://ip.ss.zxinc.org/   |
 | SSL Labs                   | [SSL Labs](https://www.ssllabs.com/ssltest/) | SSL 服务器测试，包括证书信息及支持的协议   |
 | 录屏                   | [screenapp](https://screenapp.io/) 或 [recordscreen](https://recordscreen.io/) | 无需安装软件，使用谷歌、火狐浏览器均可   |
+| linux终端操作记录录屏                   | [asciinema](https://asciinema.org/)  | 安装简单，操作便捷   |
