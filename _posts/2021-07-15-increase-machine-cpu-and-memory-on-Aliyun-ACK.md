@@ -32,12 +32,12 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 
 | 更换顺序   | pod    | 旧节点                       |
 |--------|--------|---------------------------|
-| 1      | cdts-0 | cn-beijing.10.70.241.108  |
-| 2      | cdts-1 | cn-beijing.10.70.240.42   |
-| 3      | cdts-2 | cn-beijing.10.70.240.52   |
-| 4      | cdts-3 | cn-beijing.10.70.241.118  |
-| 5      | cdts-4 | cn-beijing.10.70.240.39   |
-| 6      | cdts-5 | cn-beijing.10.70.241.100  |
+| 1      | meeting-0 | cn-beijing.10.70.241.108  |
+| 2      | meeting-1 | cn-beijing.10.70.240.42   |
+| 3      | meeting-2 | cn-beijing.10.70.240.52   |
+| 4      | meeting-3 | cn-beijing.10.70.241.118  |
+| 5      | meeting-4 | cn-beijing.10.70.240.39   |
+| 6      | meeting-5 | cn-beijing.10.70.241.100  |
 
 ## 新增节点
 
@@ -45,7 +45,7 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 
 1，节点池中的实例规格改为 ecs.c6.6xlarge
 
-点击 节点管理→节点池-->cdts-->编辑
+点击 节点管理-->节点池-->meeting-->编辑
 ![prod-ack-increase-node-edit.png](https://i.loli.net/2021/08/02/hIupwO9BbEXA3YH.png)
 
 实例规格处搜 `ecs.c6.6x`，点击 `+` 号，添加到已选规格中。已选规格处点击 `-` 号，移除原有的 `ecs.c6.4x`
@@ -53,7 +53,7 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 ![prod-ack-increase-node-add-6x.png](https://i.loli.net/2021/08/02/VxvENYd3kFUonJ9.png)
 
 
-2，点击 节点管理→节点池-->cdts-->扩容
+2，点击 节点管理-->节点池-->meeting-->扩容
 
 ![prod-ack-increase-node-2.png](https://i.loli.net/2021/08/02/qa6bXGUhdP4JNLS.png)
 
@@ -63,11 +63,11 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 
 可运行以下命令，观察新加入的节点是否为 ready
 
-> kubectl get node -l k8s-cdts=true -w
+> kubectl get node -l k8s-meeting=true -w
 
 4，扩容节点打 ROLE 标签
 
-> kubectl label node cn-beijing.10.70.240.88 node-role.kubernetes.io/cdts=node
+> kubectl label node cn-beijing.10.70.240.88 node-role.kubernetes.io/meeting=node
 
 ```plain
 cn-beijing.10.70.240.88 需要替换为新开节点的 IP
@@ -94,10 +94,10 @@ cn-beijing.10.70.241.108 为节点名称，实际执行时注意替换
 
 ### 删除旧 pod
 
-> kubectl delete pod cdts-0
+> kubectl delete pod meeting-0
 
 ```plain
-cdts-0 为 pod 名称，实际执行时注意替换
+meeting-0 为 pod 名称，实际执行时注意替换
 ```
 
 ### 旧节点解绑弹性公网 IP
@@ -130,7 +130,7 @@ cn-beijing.10.70.240.88 需要替换为新开节点的 IP
 
 执行以下命令更改配置
 
-> kubectl edit sts cdts
+> kubectl edit sts meeting
 
  - limits 处 cpu 值改为 "22"
  - limits 处 memory 值改为 46Gi
@@ -157,7 +157,7 @@ resources:
 
 ### 移除节点
 
-节点管理→节点池-->cdts-->详情
+节点管理-->节点池-->meeting-->详情
 
 ![prod-ack-increase-node-detail.png](https://i.loli.net/2021/08/02/rmBd6sSkpziTRJ5.png)
 
