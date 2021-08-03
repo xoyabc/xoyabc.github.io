@@ -32,12 +32,12 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 
 | 更换顺序   | pod    | 旧节点                       |
 |--------|--------|---------------------------|
-| 1      | meeting-0 | cn-beijing.10.70.241.108  |
-| 2      | meeting-1 | cn-beijing.10.70.240.42   |
-| 3      | meeting-2 | cn-beijing.10.70.240.52   |
-| 4      | meeting-3 | cn-beijing.10.70.241.118  |
-| 5      | meeting-4 | cn-beijing.10.70.240.39   |
-| 6      | meeting-5 | cn-beijing.10.70.241.100  |
+| 1      | meeting-0 | cn-beijing.192.168..241.108  |
+| 2      | meeting-1 | cn-beijing.192.168..240.42   |
+| 3      | meeting-2 | cn-beijing.192.168..240.52   |
+| 4      | meeting-3 | cn-beijing.192.168..241.118  |
+| 5      | meeting-4 | cn-beijing.192.168..240.39   |
+| 6      | meeting-5 | cn-beijing.192.168..241.100  |
 
 ## 新增节点
 
@@ -67,29 +67,29 @@ StatefulSet 部署的 pod 有编号（默认从0开始，依次递增），为�
 
 4，扩容节点打 ROLE 标签
 
-> kubectl label node cn-beijing.10.70.240.88 node-role.kubernetes.io/meeting=node
+> kubectl label node cn-beijing.192.168..240.88 node-role.kubernetes.io/meeting=node
 
 ```plain
-cn-beijing.10.70.240.88 需要替换为新开节点的 IP
+cn-beijing.192.168..240.88 需要替换为新开节点的 IP
 ```
 
 5，新开节点置为不可调度
 
-> kubectl cordon cn-beijing.10.70.240.88
+> kubectl cordon cn-beijing.192.168..240.88
 
 ```plain
-cn-beijing.10.70.240.88 需要替换为新开节点的 IP
+cn-beijing.192.168..240.88 需要替换为新开节点的 IP
 ```
 
 
 ### 旧节点置为不可调度
 
 ```shell
-kubectl cordon cn-beijing.10.70.241.108
+kubectl cordon cn-beijing.192.168..241.108
 ```
 
 ```plain
-cn-beijing.10.70.241.108 为节点名称，实际执行时注意替换
+cn-beijing.192.168..241.108 为节点名称，实际执行时注意替换
 ```
 
 ### 删除旧 pod
@@ -116,10 +116,10 @@ pod 中的 业务 docker 容器启动依赖公网 IP，因此在 pod 调度到�
 
 执行以下命令
 
-> kubectl uncordon cn-beijing.10.70.240.88
+> kubectl uncordon cn-beijing.192.168..240.88
 
 ```plain
-cn-beijing.10.70.240.88 需要替换为新开节点的 IP
+cn-beijing.192.168..240.88 需要替换为新开节点的 IP
 ```
 
 之后 Scheduler 会将 pod 调度到新开节点
