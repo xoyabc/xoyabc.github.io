@@ -19,7 +19,7 @@ keywords: linux
 
 > lsof -n |awk '{num[$2]++}END{for(i in num) print num[i],i}' |sort -nr |head 
 
-确认进程号为 `11342`，执行 `lsof -p 11342（PID）` 查看句柄占用信息，发现有大量 `CLOSE_WAIT` 状态的TCP连接
+确认进程号为 `11342`，执行 `lsof -p 11342` 查看句柄占用信息，发现有大量 `CLOSE_WAIT` 状态的 TCP 连接
 
 ```shell
 COMMAND     PID  USER   FD   TYPE            DEVICE       SIZE/OFF                NODE NAME
