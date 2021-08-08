@@ -17,7 +17,9 @@ keywords: linux
 
 登录业务机器，执行以下命令找出打开文件数最多的进程
 
-> lsof -n |awk '{num[$2]++}END{for(i in num) print num[i],i}' |sort -nr |head 
+```shell
+lsof -n |awk '{num[$2]++}END{for(i in num) print num[i],i}' |sort -nr |head 
+```
 
 确认进程号为 `11342`，执行 `lsof -p 11342` 查看句柄占用信息，发现有大量 `CLOSE_WAIT` 状态的 TCP 连接
 
