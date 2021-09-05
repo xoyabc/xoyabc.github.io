@@ -57,7 +57,7 @@ ps 中的 `priority` 共有如下几种 priority，其中 priority 为原始值�
 |----------|----------------|--------------|------------|--------------------------|
 | pri      | 39-priority    | 41 to 139    | 0 to 39    |                          |
 | priority | priority       | -100 to -2   | -39 to 0   | raw value                |
-| opri     | 60+priority    | -40 to 58    | 60 99      |                          |
+| opri     | 60+priority    | -40 to 58    | 60 to 99   |                          |
 | pri_api  | -1 - priority  | 1 to 99      | -40 to -1  | correct for RT           |
 | pri_bar  | priority + 1   | -99 to -1    | 1 to 40    |                          |
 | pri_baz  | priority + 100 | 1 to 99      | 100 to 139 | internal kernel priority |
