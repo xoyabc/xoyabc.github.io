@@ -1,6 +1,6 @@
 ---
 layout: post
-title: top 和 ps 中 priority 值不同的原因
+title: top 和 ps 中进程优先级值不同的原因
 categories: python
 description: top 和 ps 中 priority 值不同的原因
 keywords: linux
