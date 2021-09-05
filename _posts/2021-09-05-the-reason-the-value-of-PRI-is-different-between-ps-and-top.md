@@ -131,4 +131,15 @@ static int pr_opri(char *restrict const outbuf, const proc_t *restrict const pp)
 }
 ```
 
+## REF
+
+[Commands 'top' and 'ps' show different values for priority - why?](https://unix.stackexchange.com/questions/613717/commands-top-and-ps-show-different-values-for-priority-why#comment1146281_613727)
+
+[ps priority('pri) different from value shown by top](https://gitlab.com/procps-ng/procps/-/issues/111)
+
+[ps/output.c](https://gitlab.com/procps-ng/procps/-/blob/master/ps/output.c)
+
+[difference-between-real-time-tasks-and-non-real-time-tasks](https://www.geeksforgeeks.org/difference-between-real-time-tasks-and-non-real-time-tasks/)
+
+[ps 命令的 PRI 值和 task_struct 的 prio 值的关系是怎么样？]
 
