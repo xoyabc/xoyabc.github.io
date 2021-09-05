@@ -51,7 +51,7 @@ F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 
 ## ps 中的 priority
 
-ps 中的 `priority` 值为 `/proc/[pid]/stat` 中的第 18 列，共有如下几种 priority，其中 priority 为原始值，其他值均由其计算而来。值越小，优先级越高。
+ps 中的 `priority` 共有如下几种 priority，其中 priority 为原始值，其值为 `/proc/[pid]/stat` 中的第 18 列，其他值均由其计算而来。值越小，优先级越高。
 
 | option   | calculation    | rt range     | nrt range  | notes                    |
 |----------|----------------|--------------|------------|--------------------------|
@@ -88,7 +88,7 @@ ps 中的 `priority` 值为 `/proc/[pid]/stat` 中的第 18 列，共有如下�
 
  - top
 
-top 打印的值为原始值 `priority` 20，可使用以下命令获取到：
+top 打印的值为原始值 `priority`，为 20，可使用以下命令获取到：
 
 ```shell
 awk '{print $18}' /proc/19910/stat  
