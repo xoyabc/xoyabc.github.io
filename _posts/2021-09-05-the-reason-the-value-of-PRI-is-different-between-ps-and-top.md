@@ -141,5 +141,5 @@ static int pr_opri(char *restrict const outbuf, const proc_t *restrict const pp)
 
 [difference-between-real-time-tasks-and-non-real-time-tasks](https://www.geeksforgeeks.org/difference-between-real-time-tasks-and-non-real-time-tasks/)
 
-[ps 命令的 PRI 值和 task_struct 的 prio 值的关系是怎么样？](https://www.zhihu.com/question/272086181)
+[ps 命令的 PRI 值和 task_struct 的 prio 值的关系是怎么样？](https://www.zhihu.com/question/272086181)  
 
