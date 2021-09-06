@@ -51,7 +51,7 @@ F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 
 ## ps 中的 priority
 
-ps 中的 `priority` 共有如下几种，其中 priority 为原始值，其值为 `/proc/[pid]/stat` 中的第 18 列，其他值均由其计算而来。值越小，优先级越高。
+ps 中的 `priority` 共有如下几种，其中 priority 为原始值，其值为 `/proc/[pid]/stat` 中的第 18 列，其他值均由其计算而来。值越小，优先级越高。 
 
 | option   | calculation    | rt range     | nrt range  | notes                    |
 |----------|----------------|--------------|------------|--------------------------|
@@ -69,7 +69,7 @@ ps 中的 `priority` 共有如下几种，其中 priority 为原始值，其值�
    - 实时任务是有时间限制的任务，有期限，必须在期限前完成。
    - 无 nice 值。
    - 任务的调度优先级永远高于所有的非实时任务。
- 
+
  - Non-Real-time Tasks
  
    - 非实时任务是无时间限制的任务，无期限，无需在期限前完成。
