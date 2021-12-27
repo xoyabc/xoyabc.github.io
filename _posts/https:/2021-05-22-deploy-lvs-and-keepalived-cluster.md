@@ -10,11 +10,11 @@ keywords: linux, nginx
 
 | 主机      | IP-LAN       | IP-WAN        |
 |---------|--------------|---------------|
-| LVS01   | 172.17.35.54 | 119.253.82.16 |
-| LVS02   | 172.17.35.55 | 119.253.82.17 |
-| VIP     | 172.17.35.56 | 119.253.82.6  |
-| nginx01 | 172.17.35.57 |               |
-| nginx02 | 172.17.35.58 |               |
+| LVS01   | 172.17.85.54 | 119.253.282.16 |
+| LVS02   | 172.17.85.55 | 119.253.282.17 |
+| VIP     | 172.17.85.56 | 119.253.282.6  |
+| nginx01 | 172.17.85.57 |               |
+| nginx02 | 172.17.85.58 |               |
 
 
 ### 更新源
@@ -76,8 +76,8 @@ apt-get install -y nginx
 # description: LVS DR real server   
 #   
 #.  /etc/rc.d/init.d/functions
-VIP=119.253.82.6
-VIP1=172.17.35.56
+VIP=119.253.282.6
+VIP1=172.17.85.56
 host=`/bin/hostname`
 case "$1" in  
 start)   
@@ -159,16 +159,16 @@ vrrp_instance VI_1 {
         auth_pass 1111
     }
     virtual_ipaddress {
-        172.17.35.56 dev eth0 label eth0:0
+        172.17.85.56 dev eth0 label eth0:0
     }
 }
-virtual_server 172.17.35.56 80 {
+virtual_server 172.17.85.56 80 {
     delay_loop 5
     lb_algo wrr
     lb_kind DR
 #    persistence_timeout 10
     protocol TCP
-    real_server 172.17.35.54 80 {
+    real_server 172.17.85.54 80 {
         weight 1
         TCP_CHECK {
             connect_timeout 5
@@ -177,7 +177,7 @@ virtual_server 172.17.35.56 80 {
             connect_port 80
         }
     }
-    real_server 172.17.35.55 80 {
+    real_server 172.17.85.55 80 {
         weight 1
         TCP_CHECK {
             connect_timeout 5
@@ -199,16 +199,16 @@ vrrp_instance VI_2 {
         auth_pass 1111
     }
     virtual_ipaddress {
-        119.253.82.6 dev eth1 label eth1:0
+        119.253.282.6 dev eth1 label eth1:0
     }
 }
-virtual_server 119.253.82.6 80 {
+virtual_server 119.253.282.6 80 {
     delay_loop 5
     lb_algo wrr
     lb_kind DR
 #    persistence_timeout 10
     protocol TCP
-    real_server 119.253.82.16 80 {
+    real_server 119.253.282.16 80 {
         weight 1
         TCP_CHECK {
             connect_timeout 5
@@ -217,7 +217,7 @@ virtual_server 119.253.82.6 80 {
             connect_port 80
         }
     }
-    real_server 119.253.82.17 80 {
+    real_server 119.253.282.17 80 {
         weight 1
         TCP_CHECK {
             connect_timeout 5
@@ -258,10 +258,10 @@ virtual_server 119.253.82.6 80 {
 
 ### 验证
 
-关闭其中一台 nginx 后，分别绑定 172.17.35.56 及 119.253.82.6 测试到 80 端口的连通性
+关闭其中一台 nginx 后，分别绑定 172.17.85.56 及 119.253.282.6 测试到 80 端口的连通性
 
-> for i in $(seq 1 1 20);do nc -zv -w 2 172.17.35.56 80;done
-> for i in $(seq 1 1 20);do nc -zv -w 2 119.253.82.6 80;done
+> for i in $(seq 1 1 20);do nc -zv -w 2 172.17.85.56 80;done
+> for i in $(seq 1 1 20);do nc -zv -w 2 119.253.282.6 80;done
 
 主要关注：
 
@@ -300,4 +300,3 @@ keepalived 配置时需要注意以下几项：
 
  - virtual_router_id 取值在0-255之间，用来区分多个 instance 的 VRRP 组播
  - 配置时需要查看下本网段的 virtual_router_id ，不能与其他机器重复
-
