@@ -139,7 +139,7 @@ virtual_router_id 注意事项：
  - 本机两个 vrrp_instance 组的此值不能相同，否则会会引发交换机广播风暴。
  - virtual_router_id 默认使用IP最后一位。
 
-vim /etc/keepalived/keepalived.conf
+> vim /etc/keepalived/keepalived.conf
 
 贴入一下内容，注意检查 **virtual_router_id**
 
@@ -233,8 +233,8 @@ virtual_server 119.253.82.6 80 {
 ### LVS02 机器配置
 
 从主节点拷贝 keepalived.conf ，之后修改
- - state MASTER 改为 BACKUP
- - 内外网 vrrp_instance 中的 priority 100 改为 90
+ - 内外网 vrrp_instance 中的 state 由 MASTER 改为 BACKUP
+ - 内外网 vrrp_instance 中的 priority 由 100 改为 90
  - router_id D-Medial-1 改为 router_id D-Medial-2
 
 ### 两台 nginx 开启转发功能
