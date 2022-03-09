@@ -13,6 +13,12 @@ keywords: linux
  - 中转-->转码集群，相互访问正常
  - 中转 A-->中转 B，节点间互拉异常
 
+A B 主机 IP：
+
+| A | 10.174.20.81 |
+|---|--------------|
+| B | 10.174.20.83 |
+
 在 A 主机上，使用 curl 请求 B 主机，分别查看 A B 主机的 nginx 访问日志，发现请求打到了 A 主机，没有打到 B 主机，与预期不符。curl 命令及日志见下：
 
 ```shell
@@ -91,7 +97,7 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 byte
 
 ## 解决
 
-1，掩码改为32位
+1，掩码改为 32 位
 
 > sed -i 's#255.255.255.0#255.255.255.255#g' /etc/sysconfig/network-scripts/ifcfg-l0:6
 
