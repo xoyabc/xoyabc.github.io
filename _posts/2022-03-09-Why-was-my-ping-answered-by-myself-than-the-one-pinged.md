@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 为什么 ping 目标主机对方却收不到包?
+title: 为什么向目标主机发送请求实际却打到了本机？
 categories: python
 description: 同网段内ping另一主机，目标主机收不到包，实际却是本机在回包。
 keywords: linux
