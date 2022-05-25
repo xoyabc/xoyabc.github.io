@@ -8,10 +8,9 @@ keywords: http, ios
 
 ## 故障现象
 客户反馈苹果手机浏览器打开网页失败，页面显示报错“无法解析响应”
-URL：https://storage.360buyimg.com/protocols/format/45bd0c99a96d56a8b33b11b664451337.html?_t=1632403876589
+URL：https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=1632403876589
 
-[![XimFEV.png](https://s1.ax1x.com/2022/05/24/XimFEV.png)](https://imgtu.com/i/XimFEV)
-[![XimFEV.md.png](https://s1.ax1x.com/2022/05/24/XimFEV.md.png)](https://imgtu.com/i/XimFEV)
+[![XAWrCj.png](https://s1.ax1x.com/2022/05/26/XAWrCj.png)](https://imgtu.com/i/XAWrCj)
 
 ## 排查
 
@@ -28,10 +27,10 @@ URL：https://storage.360buyimg.com/protocols/format/45bd0c99a96d56a8b33b11b6644
 使用 curl 模拟请求，其中 114.230.205.224 为 CDN IP
 
 ```
-curl -Lvo /dev/null --http2 "https://storage.360buyimg.com/protocols/format/45bd0c99a96d56a8b33b11b664451337.html?_t=163163163163" --resolve storage.360buyimg.com:443:114.230.205.224
+curl -Lvo /dev/null --http2 "https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=163163163163" --resolve s.test.com:443:114.230.205.224
 ```
 
-[![XiuON6.png](https://s1.ax1x.com/2022/05/24/XiuON6.png)](https://imgtu.com/i/XiuON6)
+[![XAW6vq.md.png](https://s1.ax1x.com/2022/05/26/XAW6vq.md.png)](https://imgtu.com/i/XAW6vq)
 
 可以看到 `Invalid HTTP header field` 的报错，具体报错见下：
 ```bash
@@ -40,7 +39,7 @@ curl -Lvo /dev/null --http2 "https://storage.360buyimg.com/protocols/format/45bd
 * HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1)
 * stopped the pause stream!
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-* Connection #0 to host storage.360buyimg.com left intact
+* Connection #0 to host s.test.com left intact
 curl: (92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1)
 * Closing connection 0
 ```
@@ -57,9 +56,9 @@ This means that an intermediary transforming an HTTP/1.x message to HTTP/2 will 
 ## 解决
 
 1，联系 CDN 厂商，当响应 HTTP/2 消息时，移除掉 Proxy-Connection、Keep-Alive、Transfer-Encoding、Upgrade 响应头。
+
 2，联系 CDN 厂商修改配置，不缓存 Proxy-Connection、Keep-Alive、Transfer-Encoding、Upgrade 响应头。
 
 ## REF
 
 [http2.0非法头部导致iphone访问白屏](https://cloud.tencent.com/developer/article/1754005)
-
