@@ -27,10 +27,10 @@ URL：
 电脑绑定 CDN 节点的 host，同时开启 fiddler 抓包，手机连接电脑发射的热点，打开报障的 URL，可以复现到现象。
 从抓包数据看，请求协议为 HTTP2。
 
-使用 curl 模拟请求，其中 114.230.205.224 为 CDN IP
+使用 curl 模拟请求，其中 115.230.205.224 为 CDN IP
 
 ```
-curl -Lvo /dev/null --http2 "https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=163163163163" --resolve s.test.com:443:114.230.205.224
+curl -Lvo /dev/null --http2 "https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=163163163163" --resolve s.test.com:443:115.230.205.224
 ```
 
 [![XAW6vq.md.png](https://s1.ax1x.com/2022/05/26/XAW6vq.md.png)](https://imgtu.com/i/XAW6vq)
