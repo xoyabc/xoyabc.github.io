@@ -23,7 +23,7 @@ URL：
 
 [![Xinmi8.png](https://s1.ax1x.com/2022/05/24/Xinmi8.png)](https://imgtu.com/i/Xinmi8)
 
-## 绑定 CDN 节点测试
+### 绑定 CDN 节点测试
 电脑绑定 CDN 节点的 host，同时开启 fiddler 抓包，手机连接电脑发射的热点，打开报障的 URL，可以复现到现象。
 从抓包数据看，请求协议为 HTTP2。
 
