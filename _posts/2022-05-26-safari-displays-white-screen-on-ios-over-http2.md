@@ -7,8 +7,11 @@ keywords: http, ios
 ---
 
 ## 故障现象
-客户反馈苹果手机浏览器打开网页失败，页面显示报错“无法解析响应”
-URL：https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=1632403876589
+
+用户反馈苹果手机浏览器打开网页失败，页面显示报错“无法解析响应”
+
+URL：
+> https://s.test.com/protocols/format/66bd0c66a96d56a8b33b11b664451337.html?_t=1632403876589
 
 [![XAWrCj.png](https://s1.ax1x.com/2022/05/26/XAWrCj.png)](https://imgtu.com/i/XAWrCj)
 
@@ -44,8 +47,8 @@ curl: (92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1)
 * Closing connection 0
 ```
 
-猜测为 `proxy-connection` 头 与 `HTTP2` 兼容有问题，后查看 RFC 文档 [8.1.2.2. Connection-Specific Header Fields
-](https://httpwg.org/specs/rfc7540.html#rfc.section.8.1.2.2) 得知，HTTP2 不使用 `Connection` header 头，任何带有`特定连接`的 header 头都会被视为格式错误，例如 Keep-Alive, Proxy-Connection, Transfer-Encoding, and Upgrade。当中间层将 HTTP/1.x 消息转换为 HTTP2 时，需要移除这些头。
+猜测为 `proxy-connection` 头 与 HTTP2 兼容有问题，后查看 RFC 文档 [8.1.2.2. Connection-Specific Header Fields
+](https://httpwg.org/specs/rfc7540.html#rfc.section.8.1.2.2) 得知，HTTP2 不使用 `Connection` header 头，任何带有特定连接的 header 头都会被视为格式错误，例如 Keep-Alive, Proxy-Connection, Transfer-Encoding, and Upgrade。当中间层将 HTTP/1.x 消息转换为 HTTP2 时，需要移除这些头。
 
 ```
 HTTP/2 does not use the Connection header field to indicate connection-specific header fields; in this protocol, connection-specific metadata is conveyed by other means. An endpoint MUST NOT generate an HTTP/2 message containing connection-specific header fields; any message containing connection-specific header fields MUST be treated as malformed
