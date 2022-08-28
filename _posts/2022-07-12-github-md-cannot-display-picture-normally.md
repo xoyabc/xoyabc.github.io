@@ -1,6 +1,6 @@
 ---
 layout: post
-title: github markdown 外链图片异常显示问题
+title: github markdown 文档图片异常显示问题
 categories: linux
 description: github的 md 文档，嵌入的图片外链无法正常显示，直接访问图片链接正常
 keywords: python, pexpect
