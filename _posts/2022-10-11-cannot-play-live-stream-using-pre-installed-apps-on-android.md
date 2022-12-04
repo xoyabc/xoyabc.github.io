@@ -69,7 +69,7 @@ always fatal.
 使用 curl 指定协议版本测试，可以看到对端不支持的错误提示：
 
 ```shell
-curl -vo /dev/null https://pull.test.com/live/6666666.flv  --resolve pull.test.com:443:124.198.198.143  --tlsv1.0
+curl -vo /dev/null https://pull.test.com/live/6666666.flv --resolve pull.test.com:443:124.198.198.143 --tlsv1.0
 * Added pull.test.com:443:124.198.198.143 to DNS cache
 * About to connect() to pull.test.com port 443 (#0)
 *   Trying 124.198.198.143...
