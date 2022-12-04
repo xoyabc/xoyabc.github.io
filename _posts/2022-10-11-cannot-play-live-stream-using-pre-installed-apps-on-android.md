@@ -51,7 +51,9 @@ URL：https://pull.test.com/live/6666666.flv
 查阅 RFC 文档 [rfc5246#section-7.2.2](https://www.rfc-editor.org/rfc/rfc5246#section-7.2.2)，此错误描述为：
 
 ```
-The protocol version the client has attempted to negotiate is recognized but not supported.  (For example, old protocol versions might be avoided for security reasons.)  This message is always fatal.
+The protocol version the client has attempted to negotiate is recognized but not supported.
+(For example, old protocol versions might be avoided for security reasons.)  This message is
+always fatal.
 ```
 
 大意为客户端协商的 TLS 版本服务端不支持，比如处于安全原因，应避免使用旧协议版本。
