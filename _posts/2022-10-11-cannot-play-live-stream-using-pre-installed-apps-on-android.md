@@ -56,7 +56,7 @@ The protocol version the client has attempted to negotiate is recognized but not
 always fatal.
 ```
 
-大意为客户端协商的 TLS 版本服务端不支持，比如处于安全原因，应避免使用旧协议版本。
+大意为客户端协商的 TLS 版本服务端不支持，比如出于安全原因，应避免使用旧协议版本。
 
  - 查看客户端请求时发出的 TLS 版本为 1.0
 
@@ -88,7 +88,7 @@ curl: (35) Peer reports incompatible or unsupported protocol version.
 
 6，微信群联系第三方 CDN 侧，确认其是否支持 TLS 1.0
 
-第三方反馈出于安全考虑，没有支持 TLS 1.0 和 TLS 1.1 ，针对这个配置在走紧急配置流程，不过需要进行审批和配置下发等操作，时间上大约需要 2 个小时左右。
+第三方反馈出于安全考虑，没有支持 TLS 1.0 和 TLS 1.1 。针对这个配置在走紧急配置流程，不过需要进行审批和配置下发等操作，时间上大约需要 2 个小时左右。
 
 7，用户使用最新版的包播放并抓包
 
