@@ -98,5 +98,13 @@ curl: (35) Peer reports incompatible or unsupported protocol version.
 
 让第三方 CDN 开启 tls1.0 和 tls 1.1 支持
 
+## REF
+
+[TLS 1.3 Alert Protocol](https://github.com/halfrost/Halfrost-Field/blob/master/contents/Protocol/TLS_1.3_Alert_Protocol.md)
+
+[The TLS Protocol V1.0 - RFC 2246 中文版](http://kipway.com/kipway_TSL.html)
+
+
+
 
 
