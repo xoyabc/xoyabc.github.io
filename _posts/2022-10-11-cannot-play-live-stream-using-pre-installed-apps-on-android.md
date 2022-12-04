@@ -90,7 +90,7 @@ curl: (35) Peer reports incompatible or unsupported protocol version.
 
 第三方反馈出于安全考虑，没有支持 tls1.0 和 tls 1.1 ，针对这个配置在走紧急配置流程，不过需要进行审批和配置下发等操作，时间上大约需要 2 个小时左右。
 
-7. 用户使用最新版的包播放并抓包
+7，用户使用最新版的包播放并抓包
 
 可以看到使用的协议为 TLS 1.2
 
