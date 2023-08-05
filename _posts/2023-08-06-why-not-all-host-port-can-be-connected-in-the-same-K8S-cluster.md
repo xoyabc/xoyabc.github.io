@@ -21,6 +21,8 @@ keywords: k8s, linux
 - 2，查看端口不通的节点状态正常
 - 3，进一步分析 pod，发现通的四个 IP 刚好是 pod 所在的主机，猜测可能和 service 的转发策略有关
 
+![svc-nodeport-get-pod.png](https://s2.loli.net/2023/08/06/53rbfOqAElQRnHY.png)
+
 运行 `kubectl get svc service-name -n rtmp -o yaml` 查看 service 配置如下：
 
 ```shell
