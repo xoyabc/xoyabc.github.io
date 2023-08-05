@@ -44,7 +44,7 @@ ipFamilies:
 ipFamilyPolicy: SingleStack
 ports:
 - name: srs-service-name
-nodePort: 1935
+nodePort: 8081
 port: 1935
 protocol: TCP
 targetPort: 1935
