@@ -54,7 +54,7 @@ status:
 loadBalancer: {}
 ```
 
-可以看到 externalTrafficPolicy 的值为 Local，externaltrafficpolicy 用于把集群外部的服务引入到集群内部来，之后在集群内部直接使用。而值为 Local 表示流量只发给本机的 Pod。
+可以看到 externalTrafficPolicy 的值为 Local，externaltrafficpolicy 用于把集群外部的服务引入到集群内部来，之后在集群内部直接使用，而值为 Local 表示流量只发给本机的 Pod。
 
 ## 解决
 
