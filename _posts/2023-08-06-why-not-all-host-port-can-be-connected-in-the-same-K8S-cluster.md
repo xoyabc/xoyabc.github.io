@@ -19,7 +19,7 @@ keywords: k8s, linux
 
 - 1，查看防火墙规则，没有针对 8081 端口做限制
 - 2，查看端口不通的节点状态正常
-- 3，进一步分析 pod，发现通的四个 IP 40.5-10.8 刚好是 pod 所在的主机，猜测可能和 service 的转发策略有关
+- 3，进一步分析 pod，发现通的四个 IP 40.5-40.8 刚好是 pod 所在的主机，猜测可能和 service 的转发策略有关
 
 ![svc-nodeport-get-pod.png](https://s2.loli.net/2023/08/06/53rbfOqAElQRnHY.png)
 
