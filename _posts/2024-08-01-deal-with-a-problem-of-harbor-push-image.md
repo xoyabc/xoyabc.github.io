@@ -50,9 +50,21 @@ keywords: Linux, docker, harbor
 
 ## 解决
 
-EXT_ENDPOINT 改成域名并绑定 host
+### 测试环境 harbor 机器 修改 EXT_ENDPOINT 为域名
+
+1，修改 harbor 安装目录下 /data/harbor/common/config/core/env 文件，并重启 harbor
+
+ - EXT_ENDPOINT 改为 https://harbor.test.com:10443
+![harbor-push-harbor-env.png](https://s2.loli.net/2024/08/01/9UA8FcrVvSDbThy.jpg)
+
+ - 重启 harbor：
+```bash
+docker-compose stop
+docker-compose up -d
+```
 
 ### A 部门所在 harbor 机器修改
+修改访问地址为域名并绑定 host
 
 1， 修改 /etc/hosts 文件，新增域名解析：
 
@@ -73,23 +85,13 @@ insecure-registries 部分添加 "harbor.test.com:10443" 配置
 
 由于测试环境内网机器也用到 harbor 推送镜像，同样也需要修改 docker 配置及 host 文件。
 
-1，修改harbor安装目录下~/harbor/common/config/core/env 文件，并重启harbor
-
-EXT_ENDPOINT 改为 https://harbor.test.com:10443
-![harbor-push-harbor-env.png](https://s2.loli.net/2024/08/01/9UA8FcrVvSDbThy.jpg)
-
-重启 harbor：
-```bash
-docker-compose stop
-docker-compose up -d
-```
-2，修改 /etc/hosts 文件，添加域名解析：
+1，修改 /etc/hosts 文件，添加域名解析：
 
 192.168.40.16 harbor.test.com
 
 注意这里为内网 nginx 代理地址
 
-3，修改 /etc/docker/daemon.json 配置文件，并重启docker：
+2，修改 /etc/docker/daemon.json 配置文件，并重启docker：
 
 insecure-registries 部分添加 "harbor.test.com:10443" 配置
 ![harbor-push-daemon-json-A-dev.png](https://s2.loli.net/2024/08/01/tkJLmMYBDhbOTuK.jpg)
