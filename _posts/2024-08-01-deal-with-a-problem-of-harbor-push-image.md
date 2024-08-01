@@ -63,7 +63,7 @@ docker-compose stop
 docker-compose up -d
 ```
 
-### A 部门所在 harbor 机器修改
+### A 部门 harbor 机器修改
 修改访问地址为域名并绑定 host
 
 1， 修改 /etc/hosts 文件，新增域名解析：
