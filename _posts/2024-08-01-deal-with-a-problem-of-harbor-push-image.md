@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 记一次 harbor 推送镜像失败问题
-categories: python
+categories: k8s
 description: 公网 harbor 往内网测试环境 harbor 推送镜像失败问题排查
 keywords: Linux, docker, harbor
 ---
