@@ -16,7 +16,7 @@ keywords: Linux, docker, harbor
 
 测试环境由于只有内网地址，需要通过配置 NAT 公网映射打通网络。
 
-访问走向：39.134.174.82（A 部门harbor 公网地址）-->39.156.3.216:10443（测试环境 harbor 公网映射地址）-->测试环境 nginx 反向代理：10.193.40.16:10443-->测试环境 harbor：10.193.40.13:8043
+访问走向：77.77.77.82（A 部门harbor 公网地址）-->66.66.66.216:10443（测试环境 harbor 公网映射地址）-->测试环境 nginx 反向代理：192.168.40.16:10443-->测试环境 harbor：192.168.40.13:8043
 
 1，分别在 A 部门 harbor 所在机器进行 telnet、curl 测试及防火墙侧抓包排查，均无异常。
 
@@ -30,13 +30,13 @@ keywords: Linux, docker, harbor
 2，怀疑中间的 ngnix 的反向代理有问题，又新申请了公网直接映射到测试环境 harbor 的网络策略。
    
    测试后问题依然存在。
-   变更后访问走向：39.134.174.82（A 部门harbor 公网地址）-->39.156.3.216:8043（测试环境 harbor 公网映射地址）-->测试环境 harbor：10.193.40.13:8043
+   变更后访问走向：77.77.77.82（A 部门harbor 公网地址）-->66.66.66.216:8043（测试环境 harbor 公网映射地址）-->测试环境 harbor：192.168.40.13:8043
 
-3，A 部门确认 harbor 所在机器 /etc/docker/daemon.json 配置已经添加 39.156.3.216:10443 为受信任地址
+3，A 部门确认 harbor 所在机器 /etc/docker/daemon.json 配置已经添加 66.66.66.216:10443 为受信任地址
 ```bash
 #  cat /etc/docker/daemon.json 
 {
-  "insecure-registries":["39.156.3.216:8043"],
+  "insecure-registries":["66.66.66.216:8043"],
 }
 ```
 
@@ -45,7 +45,7 @@ keywords: Linux, docker, harbor
    显示超时报错
    ![harbor-push-docker-login.png](https://s2.loli.net/2024/08/01/XVuYbxprFP7JGTi.jpg)
    
-   报错的第二个链接 https://10.193.40.13:8043 为内网地址，该地址为 ./harbor/common/config/core/env 配置文件的 EXT_ENDPOINT 参数值，EXT_ENDPOINT 表示 harbor 对外提供的访问地址。
+   报错的第二个链接 https://192.168.40.13:8043 为内网地址，该地址为 ./harbor/common/config/core/env 配置文件的 EXT_ENDPOINT 参数值，EXT_ENDPOINT 表示 harbor 对外提供的访问地址。
    原因基本已经确认，由于返回的内网地址，公网到内网地址不通，通过将 EXT_ENDPOINT 改成域名 + host绑定公网地址可解决此问题。
 
 ## 解决
@@ -56,7 +56,7 @@ EXT_ENDPOINT 改成域名并绑定 host
 
 1， 修改 /etc/hosts 文件，新增域名解析：
 
-39.156.3.216 harbor.test.com
+66.66.66.216 harbor.test.com
 
 2，修改 /etc/docker/daemon.json 配置文件，并重启docker：
 
@@ -85,7 +85,7 @@ docker-compose up -d
 ```
 2，修改 /etc/hosts 文件，添加域名解析：
 
-10.193.40.16 harbor.test.com
+192.168.40.16 harbor.test.com
 
 注意这里为内网 nginx 代理地址
 
@@ -100,6 +100,4 @@ insecure-registries 部分添加 "harbor.test.com:10443" 配置
 [Harbor介绍](https://t.goodrain.com/d/8204-dockerharborrainbond)
 
 [harbor登录时报错error parsing HTTP 404 response body: invalid character](https://www.cnblogs.com/muzlei/p/17748915.html)
-
-
 
